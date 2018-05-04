@@ -1,13 +1,13 @@
 @extends('layouts.app')
+<div class="hidden">@include('partials.header')</div>
 
-@section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
-
-                <div class="panel-body">
+    <div class="row justify-content-center" style="margin-top: 30px">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">Register</div>
+                <div class="card-body">
+                    <img src="">
                     <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
                         {{ csrf_field() }}
 
@@ -62,9 +62,10 @@
                             </div>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
-@endsection
+
