@@ -135,9 +135,7 @@
                     <a href="page-edit-profile.html" class="nav-link"><i class="icon ion-compose"></i> Edit Profile</a>
                     <a href="page-activity.html" class="nav-link"><i class="icon ion-ios-bolt"></i> Activity Log</a>
                     <a href="page-settings.html" class="nav-link"><i class="icon ion-ios-gear"></i> Account Settings</a>
-                    <a class="nav-link" class="dropdown-item" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"><i class="icon ion-forward"></i>
+                    <a class="nav-link" class="dropdown-item" href="{{ url('/auth/logout') }}"><i class="icon ion-forward"></i>
                         Sign Out
                     </a>
 

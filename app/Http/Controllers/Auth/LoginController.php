@@ -32,7 +32,8 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+
+        $this->middleware('guest', ['except' => ['logout', 'getLogout']]);
     }
     /**
      * Check either username or email.
@@ -76,4 +77,11 @@ class LoginController extends Controller
             ]
         );
     }
+
+    public function logout(){
+        auth()->logout();
+        return redirect('/login');
+    }
+
+
 }
