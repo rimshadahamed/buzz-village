@@ -24,7 +24,7 @@
                             </div>
                         @endif
                         <div class="form-group{{ $errors->has('identity') ? ' has-error' : '' }}">
-                            <label for="identity" class="col-md-4 control-label">Email or Username</label>
+                            <label for="identity" class="col-md-4 control-label">Email or Usernamec</label>
 
                             <div class="col-md-12">
                                 <input id="identity" type="identity" class="form-control" name="identity"
