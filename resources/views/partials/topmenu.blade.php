@@ -1,4 +1,4 @@
-<div class="slim-header">
+ <div class="slim-header">
     <div class="container">
     <div class="slim-header-left">
         <h2 class="slim-logo"><img src="../img/bvpp.jpg"><a href="index.html"> connect<span>.</span></a></h2>
@@ -149,6 +149,7 @@
     </div>
 </div>
 <div class="slim-navbar">
+
     <div class="container">
         <ul class="nav">
             <li class="nav-item active">
@@ -157,30 +158,6 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-            <li class="nav-item with-sub">
-                <a class="nav-link" href="#">
-                    <i class="icon ion-ios-filing-outline"></i>
-                    <span>Admin</span>
-                </a>
-                <div class="sub-item">
-                    <ul>
-                        <li><a href="facility.html">Manage Users</a></li>
-                        <li><a href="office.html">Site Manager</a></li>
-                        <li><a href="office.html">Contact Manager</a></li>
-                        <li><a href="office.html">Analytics</a></li>
-                        <li><a href="office.html">API</a></li>
-                        <li class="sub-with-sub">
-                            <a href="#">Reports</a>
-                            <ul>
-                                <li><a href="facilities-report.html">Facilities Report</a></li>
-                                <li><a href="directory-report.html">Directory Report</a></li>
-                                <li><a href="conference-report.html">Conference Report</a></li>
-                                <li><a href="office-report.html">Office Report</a></li>
-                                <li><a href="parking-report.html">Parking Report</a></li>
-                                <li><a href="rewards-report.html">Rewards Report</a></li>
-                            </ul>
-                        </li>
-                    </ul></li>
             <li class="nav-item">
                 <a class="nav-link" href="social.html">
                     <i class="icon ion-ios-barcode-outline"></i>
@@ -206,46 +183,27 @@
                 </a>
                 <div class="sub-item">
                     <ul>
-                        <li><a href="facility.html">Facilities</a></li>
-                        <li><a href="office.html">Office</a></li>
-                        <li class="sub-with-sub">
-                            <a href="#">Conference</a>
-                            <ul>
-                                <li><a href="conference.html">Inquiries</a></li>
-                                <li><a href="conference-calendar.html">Calandar</a></li>
-                                <li><a href="conference-rooms.html">Rooms</a></li>
-                            </ul>
-                        </li>
-                        <li class="sub-with-sub">
-                            <a href="#">Parking</a>
-                            <ul>
-                                <li><a href="add-new-parking.html">Add Parking</a></li>
-                                <li><a href="parking.html">Inquiries</a></li>
-                                <li><a href="parking-bays.html">Spaces</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="{{route('facility')}}">Facilities</a></li>
+                        <li><a href="{{route('office')}}">Office</a></li>
+                        <li><a href="{{route('conference')}}">Conference</a></li>
+                        <li><a href="{{route('parking')}}">Parking</a></li>
                         <li><a href="bus-routes.html">Bus Routes</a></li>
                     </ul>
                 </div><!-- sub-item -->
             </li>
-            <li class="nav-item with-sub ">
+            <li class="nav-item with-sub">
                 <a class="nav-link" href="#">
                     <i class="icon ion-ios-color-filter-outline"></i>
                     <span>Community</span>
                 </a>
                 <div class="sub-item">
                     <ul>
-                        <li><a href="events.html">Events</a></li>
-                        <li class="sub-with-sub">
-                            <a href="#">Blog</a>
-                            <ul>
-                                <li><a href="add-blog.html">Add Blog</a></li>
-                                <li><a href="blog.html">Blogs</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="{{route('events')}}">Events</a></li>
+                        <li><a href="{{route('blog')}}">Blogs</a></li>
                     </ul>
                 </div><!-- dropdown-menu -->
             </li>
         </ul>
     </div><!-- container -->
+    <!-- container -->
 </div><!-- slim-navbar -->

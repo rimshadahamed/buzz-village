@@ -29,13 +29,18 @@
     <meta name="description" content="Business Village Dashboard.">
     <meta name="author" content="BeZingo">
 
-    <title>Admin Dashboard | Business Village - Connect</title>
+
 
     <!-- vendor css -->
     <link href="assets/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="assets/lib/Ionicons/css/ionicons.css" rel="stylesheet">
     <link href="assets/lib/chartist/css/chartist.css" rel="stylesheet">
     <link href="assets/lib/rickshaw/css/rickshaw.min.css" rel="stylesheet">
+
+    
+    <link href="assest/lib/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="assest/lib/jquery-toggles/css/toggles-full.css" rel="stylesheet">
+    <link href="assest/lib/jt.timepicker/css/jquery.timepicker.css" rel="stylesheet">
 
     <!-- Slim CSS -->
     <link rel="stylesheet" href="assets/slim.css">
