@@ -20,8 +20,10 @@ class ConferenceController extends Controller
         $date = $request->input('date');
         $time = $request->input('time');
         $comments = $request->input('comments');
+        $value = $request->session()->get('key');
+        dd($usersec);
 
-        DB::insert('insert into conference (first_name,last_name,email,date,time,conf_size,arrangements,status,booked_room,comments) values(?,?,?,?,?,?,?,?,?,?)',[$fname,$lname,$email,$date,$time,$space_required,$purpose,'pending','12A',$comments]);
+        DB::insert('insert into conference (first_name,last_name,email,date,time,conf_size,arrangements,status,booked_room,comments,user) values(?,?,?,?,?,?,?,?,?,?,?)',[$fname,$lname,$email,$date,$time,$space_required,$purpose,'pending','12A',$comments,'DK']);
 
         return back()->with('conference', 'Product has been added');
     }
