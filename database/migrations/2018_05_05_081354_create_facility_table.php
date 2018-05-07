@@ -19,6 +19,7 @@ class CreateFacilityTable extends Migration
             $table->string('issue_description');
             $table->string('image');
             $table->string('status');
+            $table->string('user');
             $table->timestamps();
         });
     }

@@ -26,6 +26,7 @@ class CreateOfficeTable extends Migration
             $table->string('image');
             $table->string('status');
             $table->string('block');
+            $table->string('user');
             $table->timestamps();
         });
     }

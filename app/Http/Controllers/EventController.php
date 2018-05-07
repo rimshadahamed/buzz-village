@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\ofiice;
 use Illuminate\Http\Request;
 use DB;
@@ -19,7 +20,8 @@ class EventController extends Controller
         $purpose = $request->input('purpose');
         $date = $request->input('date');
         $comments = $request->input('comments');
-
+        $user = Auth::User()->email;
+        
         $image_file = $request->file('image');
         $imagename = time().'.'.$image_file->getClientOriginalExtension();
         $destinationPath = public_path('/images/office');
@@ -30,7 +32,7 @@ class EventController extends Controller
         $image_file->move($destinationPath, $imagename);
 
 
-        DB::insert('insert into events (first_name,last_name,email_address,mobile_no,purpose,date,comments,image) values(?,?,?,?,?,?,?,?)',[$fname,$lname,$email,$mobile_no,$purpose,$date,$comments,$imagename]);
+        DB::insert('insert into events (first_name,last_name,email_address,mobile_no,purpose,date,comments,image,user) values(?,?,?,?,?,?,?,?,?)',[$fname,$lname,$email,$mobile_no,$purpose,$date,$comments,$imagename,$user]);
 
         return back()->with('events', 'Product has been added');
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\facility;
 use Illuminate\Http\Request;
 use DB;
@@ -19,8 +20,8 @@ class FacilityController extends Controller
         $block = $request->input('block');
         $issue_type = $request->input('issue_type');
         $des = $request->input('description');
-
-
+        $user = Auth::User()->email;
+        
         $image_file = $request->file('image');
         $imagename = time().'.'.$image_file->getClientOriginalExtension();
         $destinationPath = public_path('/images');
@@ -32,7 +33,7 @@ class FacilityController extends Controller
 
 
 
-        DB::insert('insert into facility (first_name,last_name,email_address,office_no,block,issue_type,issue_description,image,status) values(?,?,?,?,?,?,?,?,?)',[$fname,$lname,$email,$office_no,$block,$issue_type,$des,$imagename,'open']);
+        DB::insert('insert into facility (first_name,last_name,email_address,office_no,block,issue_type,issue_description,image,status,user) values(?,?,?,?,?,?,?,?,?,?)',[$fname,$lname,$email,$office_no,$block,$issue_type,$des,$imagename,'open',$user]);
 
         return back()->with('facility', 'Product has been added');
     }
