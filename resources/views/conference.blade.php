@@ -252,8 +252,11 @@
 </div>
 
 
-<script>
-    $(function(){
+
+</body>
+<script  type="text/javascript">
+
+    $(document).ready(function (){
         'use strict'
 
         // Datepicker
@@ -289,7 +292,5 @@
         });
     });
 </script>
-</body>
-
 
 @include('partials.footer')
