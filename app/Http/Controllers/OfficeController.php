@@ -11,7 +11,22 @@ use Image;
 class OfficeController extends Controller
 {
 
+
+
     public function save_data(Request $request){
+
+        $request->validate([
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'email' => 'required|email',
+            'space_required' => 'required',
+            'purpose' => 'required',
+            'comments' => 'required',
+            'image' => 'required',
+        ]);
+
+
+
 
         $fname = $request->input('firstname');
         $lname = $request->input('lastname');

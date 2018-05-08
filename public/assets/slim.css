@@ -7789,7 +7789,7 @@ textarea.parsley-error:active {
 
 .form-layout-2 .form-control-label,
 .form-layout-3 .form-control-label {
-  margin-bottom: 8px;
+  margin-bottom: 8px !important;
   text-transform: uppercase;
   font-size: 11px;
   letter-spacing: 0.5px;
@@ -40254,3 +40254,7 @@ a.hover-white-8:hover, a.hover-white-8:focus {
 
 .mx-wd-1350 {
   max-width: 1350px; }
+
+
+.
+

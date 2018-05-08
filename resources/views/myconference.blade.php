@@ -67,7 +67,7 @@
                             <div class="card-body bd bd-t-0">
                                 <p class="card-text">Conference Room - {{ $conf->booked_room }}.</p>
                                 <p class="card-text">Included: Projector / Notepads / Water</p>
-                                <button class="btn btn-indigo active btn-block mg-b-10">10 Guest</button>
+                                <button class="btn btn-indigo active btn-block mg-b-10">{{ $conf->conf_size }} Guests</button>
                                 <button class="btn btn-success active btn-block mg-b-10">View Location</button>
                             </div>
                         </div><!-- card -->
