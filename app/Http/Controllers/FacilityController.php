@@ -13,6 +13,15 @@ class FacilityController extends Controller
 
     public function save_data(Request $request){
 
+        $validatedData = $request->validate([
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'email' => 'required|email',
+            'office_no' => 'required',
+            'description' => 'required',
+            'image' => 'required',
+        ]);
+
         $fname = $request->input('firstname');
         $lname = $request->input('lastname');
         $email = $request->input('email');

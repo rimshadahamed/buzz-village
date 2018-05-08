@@ -50,8 +50,7 @@
                     <p>{{ \Session::get('success') }}</p>
                 </div><br />
             @endif
-
-            <form class="" method="POST" enctype="multipart/form-data" action="{{url('facilityForm') }}">
+            <form id="facilityForm" class="" method="POST" enctype="multipart/form-data" action="{{url('facilityForm') }}">
                 {{csrf_field()}}
             <label class="section-title">Have an issue to report?</label>
             <p class="mg-b-20 mg-sm-b-40">Send us a ticket and our team will revert back to you with a fix.</p>
@@ -61,25 +60,45 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="form-control-label">Firstname: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="firstname" value="John Paul" placeholder="Enter firstname">
+                            <input class="form-control" type="text" name="firstname" value="" placeholder="Enter firstname">
+                            @if ($errors->has('firstname'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('firstname') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-md-4 mg-t--1 mg-md-t-0">
                         <div class="form-group mg-md-l--1">
                             <label class="form-control-label">Lastname: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="lastname" value="McDoe" placeholder="Enter lastname">
+                            <input class="form-control" type="text" name="lastname" value="" placeholder="Enter lastname">
+                            @if ($errors->has('lastname'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('lastname') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-md-4 mg-t--1 mg-md-t-0">
                         <div class="form-group mg-md-l--1">
                             <label class="form-control-label">Email address: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="email" value="johnpaul@yourdomain.com" placeholder="Enter email address">
+                            <input class="form-control" type="text" name="email" value="" placeholder="Enter email address">
+                            @if ($errors->has('email'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-md-8">
                         <div class="form-group bd-t-0-force">
                             <label class="form-control-label">Office No: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="office_no" value="509" placeholder="Enter address">
+                            <input class="form-control" type="text" name="office_no" value="" placeholder="Enter address">
+                            @if ($errors->has('office_no'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('office_no') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-8 -->
                     <div class="col-md-4">
@@ -107,7 +126,12 @@
                     <div class="col-md-8">
                         <div class="form-group bd-t-0-force">
                             <label class="form-control-label">Describe Issue: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="description" value="What is the issue?" placeholder="Enter Issue Description">
+                            <input class="form-control" type="text" name="description" value="" placeholder="Enter Issue Description">
+                            @if ($errors->has('description'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('description') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-md-12">
@@ -117,6 +141,11 @@
                                 <input type="file" class="custom-file-input" id="image" name="image">
                                 <label class="custom-file-label" for="image">Choose file</label>
                             </div>
+                            @if ($errors->has('image'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('image') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div>
 
