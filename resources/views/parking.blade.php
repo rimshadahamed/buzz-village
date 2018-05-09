@@ -70,18 +70,34 @@
                     <div class="form-group">
                         <label class="form-control-label">Firstname: <span class="tx-danger">*</span></label>
                         <input class="form-control" type="text" name="firstname" value="John Paul" placeholder="Enter firstname">
+                        @if ($errors->has('firstname'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('firstname') }}</strong>
+                                    </span>
+                        @endif
+
                     </div>
                 </div><!-- col-4 -->
                 <div class="col-md-4 mg-t--1 mg-md-t-0">
                     <div class="form-group mg-md-l--1">
                         <label class="form-control-label">Lastname: <span class="tx-danger">*</span></label>
                         <input class="form-control" type="text" name="lastname" value="McDoe" placeholder="Enter lastname">
+                        @if ($errors->has('lastname'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('lastname') }}</strong>
+                                    </span>
+                        @endif
                     </div>
                 </div><!-- col-4 -->
                 <div class="col-md-4 mg-t--1 mg-md-t-0">
                     <div class="form-group mg-md-l--1">
                         <label class="form-control-label">Email address: <span class="tx-danger">*</span></label>
                         <input class="form-control" type="text" name="email" value="johnpaul@yourdomain.com" placeholder="Enter email address">
+                        @if ($errors->has('email'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                        @endif
                     </div>
                 </div><!-- col-4 -->
                 <div class="col-md-4">
@@ -89,15 +105,25 @@
                         <label class="form-control-label mg-b-0-force">Plan: <span class="tx-danger">*</span></label>
                         <select id="plan" name="plan" class="form-control" data-placeholder="Choose purpose">
                             <option label="Choose block"></option>
-                            <option value="Retail" selected>Annual</option>
-                            <option value="Commercial">Monthly</option>
+                            <option value="Annual" selected>Annual</option>
+                            <option value="Monthly">Monthly</option>
                         </select>
+                        @if ($errors->has('plan'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('plan') }}</strong>
+                                    </span>
+                        @endif
                     </div><!-- col-8 -->
                 </div>
                 <div class="col-md-8">
                     <div class="form-group bd-t-0-force">
                         <label class="form-control-label">Comments: <span class="tx-danger">*</span></label>
                         <input class="form-control" type="text" name="comments" value="Any special comments" placeholder="Enter any comments">
+                        @if ($errors->has('comments'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('comments') }}</strong>
+                                    </span>
+                        @endif
                     </div>
                 </div><!-- col-4 -->
             </div><!-- row -->

@@ -65,18 +65,33 @@
                         <div class="form-group">
                             <label class="form-control-label">Firstname: <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="firstname" value="John Paul" placeholder="Enter firstname">
+                            @if ($errors->has('firstname'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('firstname') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-md-4 mg-t--1 mg-md-t-0">
                         <div class="form-group mg-md-l--1">
                             <label class="form-control-label">Lastname: <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="lastname" value="McDoe" placeholder="Enter lastname">
+                            @if ($errors->has('lastname'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('lastname') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-md-4 mg-t--1 mg-md-t-0">
                         <div class="form-group mg-md-l--1">
                             <label class="form-control-label">Email address: <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="email" value="johnpaul@yourdomain.com" placeholder="Enter email address">
+                            @if ($errors->has('email'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-md-8">
@@ -90,12 +105,17 @@
                                 <option value="50">50 guests</option>
                                 <option value="100">100 guests</option>
                             </select>
+                            @if ($errors->has('space_required'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('space_required') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-8 -->
                     <div class="col-md-4">
                         <div class="form-group bd-t-0-force">
                             <label class="form-control-label">Arrangements: <span class="tx-danger">*</span></label>
-                            <select id="purpose" name="purpose" class="form-control" data-placeholder="Arrangements">
+                            <select id="arrangements" name="arrangements" class="form-control" data-placeholder="Arrangements">
                                 <option label="Choose Arrangement"></option>
                                 <option value="Tea & Coffee" selected>Tea & Coffee</option>
                                 <option value="Breakfast">Breakfast</option>
@@ -113,6 +133,11 @@
                                 <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
                                 <input name="date" type="text" class="form-control fc-datepicker" placeholder=" MM/DD/YYYY">
                             </div>
+                            @if ($errors->has('date'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('date') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div>
 
@@ -124,12 +149,22 @@
                                 <i class="fa fa-clock-o tx-16 lh-0 op-6"></i>
                                 <input id="time" name="time" type="text" class="form-control" placeholder="Set time">
                             </div>
+                            @if ($errors->has('time'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('time') }}</strong>
+                                    </span>
+                            @endif
                         </div><!-- input-group-prepend -->
                     </div>
                     <div class="col-md-12">
                         <div class="form-group bd-t-0-force">
                             <label class="form-control-label">Comments: <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="comments" value="Any Special Requests" placeholder="Enter Comments">
+                            @if ($errors->has('comments'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('comments') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
 

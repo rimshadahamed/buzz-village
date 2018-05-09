@@ -13,6 +13,15 @@ class ParkingController extends Controller
 
     public function save_data(Request $request){
 
+
+        $request->validate([
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'email' => 'required|email',
+            'plan' => 'required',
+            'comments' => 'required',
+        ]);
+
         $fname = $request->input('firstname');
         $lname = $request->input('lastname');
         $email = $request->input('email');
