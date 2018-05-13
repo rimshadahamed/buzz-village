@@ -37,6 +37,7 @@
                     <tbody>
 
                     @foreach($data as $d)
+                        @if( Auth::User()->email == $d->user)
                         <tr>
                             <th scope="row">{{ $d->office_no }}</th>
                             <td>Block</td>
@@ -45,6 +46,7 @@
                             <td>{{ $d->status }}</td>
                             <td><a href="{{route('myoffice',$d->office_no )}}"><i class="fa fa-eye"></i></a></td>
                         </tr>
+                        @endif
                     @endforeach
                     </tbody>
                 </table>

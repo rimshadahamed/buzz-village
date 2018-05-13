@@ -60,7 +60,8 @@ class NavigationController extends Controller
     }
     public function toParking()
     {
-        return view('parking');
+        $data = DB::table('parking')->get();
+        return view('parking',['data' => $data]);
     }
 
     public function toSocial()

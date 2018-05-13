@@ -36,6 +36,7 @@
                     </thead>
                     <tbody>
                     @foreach($data as $d)
+                        @if( Auth::User()->email == $d->user)
                     <tr>
                         <th scope="row">{{ $d->req_id }}</th>
                         <td>{{ $d->date }}</td>
@@ -46,6 +47,7 @@
                         <td>{{ $d->booked_room }}</td>
                         <td><a href="{{route('myconference',$d->req_id )}}"><i class="fa fa-eye"></i></a></td>
                     </tr>
+                    @endif
                     @endforeach
                     </tbody>
                 </table>

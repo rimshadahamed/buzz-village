@@ -32,12 +32,14 @@
                     </thead>
                     <tbody>
                     @foreach($data as $d)
+                        @if( Auth::User()->email == $d->user)
                     <tr>
                         <th scope="row">{{ $d->case_ID }}</th>
                         <td>{{ $d->issue_type }}</td>
                         <td>{{ $d->issue_description }}</td>
                         <td>{{ $d->status }}</td>
                     </tr>
+                        @endif
                     @endforeach
                     </tbody>
                 </table>

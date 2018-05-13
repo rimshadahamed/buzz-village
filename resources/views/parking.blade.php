@@ -34,24 +34,19 @@
                 </tr>
                 </thead>
                 <tbody>
+                @foreach($data as $d)
+                    @if( Auth::User()->email == $d->user)
                 <tr>
-                    <th scope="row">81</th>
-                    <td>B</td>
-                    <td>P1</td>
-                    <td>29.01.19</td>
-                    <td>Renewed</td>
-                    <td>12 wash p.m</td>
+                    <th scope="row">{{ $d->parking_id}}</th>
+                    <td>{{ $d->block}}</td>
+                    <td>{{ $d->floor}}</td>
+                    <td>{{ $d->parking_valid_till}}</td>
+                    <td>{{ $d->status}}</td>
+                    <td>{{ $d->car_wash}}</td>
                     <td><a href="my-parking.html"><i class="fa fa-eye"></i></a></td>
                 </tr>
-                <tr>
-                    <th scope="row">82</th>
-                    <td>B</td>
-                    <td>P1</td>
-                    <td>29.01.19</td>
-                    <td>Due for Renewal</td>
-                    <td>None</td>
-                    <td><a href="my-parking.html"><i class="fa fa-eye"></i></a></td>
-                </tr>
+                    @endif
+                @endforeach
                 </tbody>
             </table>
         </div><!-- table-responsive -->
