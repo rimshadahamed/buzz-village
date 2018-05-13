@@ -47,4 +47,9 @@ class AdminNavigationController extends Controller
     {
         return view('Admin-panel.add-rewards');
     }
+
+    public function toAdminblog()
+    {
+        return view('Admin-panel.admin-blog');
+    }
 }

@@ -59,6 +59,7 @@ Route::get('/admin-dashboard', 'AdminNavigationController@toAdminDashbord')->nam
 
 
 Route::get('/add-blog', 'AdminNavigationController@toAddBlog')->name('add-blog');
+Route::get('/admin-blog', 'AdminNavigationController@toAdminBlog')->name('admin-blog');
 Route::get('/add-directories', 'AdminNavigationController@toAddDirectories')->name('add-directories');
 Route::get('/add-new-parking', 'AdminNavigationController@toAddNewParking')->name('add-new-parking');
 Route::get('/add-rewards', 'AdminNavigationController@toAddRewards')->name('add-rewards');

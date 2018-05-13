@@ -252,7 +252,7 @@
                              <a href="#">Blog</a>
                              <ul>
                                  <li><a href="{{route('add-blog')}}">Add Blog</a></li>
-                                 <li><a href="{{route('blog')}}">Blogs</a></li>
+                                 <li><a href="{{route('admin-blog')}}">Blogs</a></li>
                              </ul>
                          </li>
                      </ul>
