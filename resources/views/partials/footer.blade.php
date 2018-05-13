@@ -37,6 +37,7 @@
 <script src="assets/lib/jqvmap/js/jquery.vmap.min.js"></script>
 <script src="assets/lib/jqvmap/js/jquery.vmap.world.js"></script>
 
+
 <script src="js/slim.js"></script>
 <script src="js/jquery.vmap.sampledata.js"></script>
 

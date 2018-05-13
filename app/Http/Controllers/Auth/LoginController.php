@@ -34,6 +34,7 @@ class LoginController extends Controller
     {
 
         $this->middleware('guest', ['except' => ['logout', 'getLogout']]);
+
     }
     /**
      * Check either username or email.

@@ -62,4 +62,17 @@ class NavigationController extends Controller
     {
         return view('parking');
     }
+
+    public function toSocial()
+    {
+        return view('m-social');
+    }
+    public function toRewards()
+    {
+        return view('m-rewards');
+    }
+    public function toDirectory()
+    {
+        return view('m-directory');
+    }
 }

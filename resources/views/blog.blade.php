@@ -1,4 +1,4 @@
-<title>Conference | Business Village - Connect</title>
+<title>Blogs | Business Village - Connect</title>
 @include('partials.header')
 
 <body class="dashboard-4">

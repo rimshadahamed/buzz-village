@@ -148,62 +148,116 @@
     </div><!-- header-right -->
     </div>
 </div>
-    <div class="slim-navbar">
+ <div class="slim-navbar">
+     <div class="container">
+         <ul class="nav">
+             <li class="nav-item active">
+                 <a class="nav-link" href="{{route('admin-dashboard')}}">
+                     <i class="icon ion-ios-home-outline"></i>
+                     <span>Dashboard</span>
+                 </a>
+             </li>
+             <li class="nav-item with-sub">
+                 <a class="nav-link" href="#">
+                     <i class="icon ion-ios-filing-outline"></i>
+                     <span>Admin</span>
+                 </a>
+                 <div class="sub-item">
+                     <ul>
+                         <li><a href="facility.html">Manage Users</a></li>
+                         <li><a href="office.html">Site Manager</a></li>
+                         <li><a href="office.html">Contact Manager</a></li>
+                         <li><a href="office.html">Analytics</a></li>
+                         <li><a href="office.html">API</a></li>
+                         <li class="sub-with-sub">
+                             <a href="#">Reports</a>
+                             <ul>
+                                 <li><a href="facilities-report.html">Facilities Report</a></li>
+                                 <li><a href="directory-report.html">Directory Report</a></li>
+                                 <li><a href="conference-report.html">Conference Report</a></li>
+                                 <li><a href="office-report.html">Office Report</a></li>
+                                 <li><a href="parking-report.html">Parking Report</a></li>
+                                 <li><a href="rewards-report.html">Rewards Report</a></li>
+                             </ul>
+                         </li>
+                     </ul></li>
+             <li class="nav-item">
+                 <a class="nav-link" href="social.html">
+                     <i class="icon ion-ios-barcode-outline"></i>
+                     <span>Social</span>
+                 </a>
 
-    <div class="container">
-        <ul class="nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{route('home')}}">
-                    <i class="icon ion-ios-home-outline"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('social')}}">
-                    <i class="icon ion-ios-barcode-outline"></i>
-                    <span>Social</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('directory')}}">
-                    <i class="icon ion-ios-book-outline"></i>
-                    <span>Directory</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('rewards')}}">
-                    <i class="icon ion-ios-star-outline"></i>
-                    <span>Rewards</span>
-                </a>
-            </li>
-            <li class="nav-item with-sub">
-                <a class="nav-link" href="#">
-                    <i class="icon ion-ios-filing-outline"></i>
-                    <span>The Building</span>
-                </a>
-                <div class="sub-item">
-                    <ul>
-                        <li><a href="{{route('facility')}}">Facilities</a></li>
-                        <li><a href="{{route('office')}}">Office</a></li>
-                        <li><a href="{{route('conference')}}">Conference</a></li>
-                        <li><a href="{{route('parking')}}">Parking</a></li>
-                        <li><a href="bus-routes.html">Bus Routes</a></li>
-                    </ul>
-                </div><!-- sub-item -->
-            </li>
-            <li class="nav-item with-sub">
-                <a class="nav-link" href="#">
-                    <i class="icon ion-ios-color-filter-outline"></i>
-                    <span>Community</span>
-                </a>
-                <div class="sub-item">
-                    <ul>
-                        <li><a href="{{route('events')}}">Events</a></li>
-                        <li><a href="{{route('blog')}}">Blogs</a></li>
-                    </ul>
-                </div><!-- dropdown-menu -->
-            </li>
-        </ul>
-    </div><!-- container -->
-    <!-- container -->
-</div><!-- slim-navbar -->
+
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link" href="{{route('directory')}}">
+                     <i class="icon ion-ios-book-outline"></i>
+                     <span>Directory</span>
+                 </a>
+                 <div class="sub-item">
+                     <ul>
+                         <li><a href="{{route('add-directories')}}">Add directory</a></li>
+                     </ul>
+                 </div>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link" href="{{route('rewards')}}">
+                     <i class="icon ion-ios-star-outline"></i>
+                     <span>Rewards</span>
+                 </a>
+                 <div class="sub-item">
+                     <ul>
+                         <li><a href="{{route('add-rewards')}}">Add directory</a></li>
+                     </ul>
+                 </div>
+             </li>
+             <li class="nav-item with-sub">
+                 <a class="nav-link" href="#">
+                     <i class="icon ion-ios-filing-outline"></i>
+                     <span>The Building</span>
+                 </a>
+                 <div class="sub-item">
+                     <ul>
+                         <li><a href="facility.html">Facilities</a></li>
+                         <li><a href="office.html">Office</a></li>
+                         <li class="sub-with-sub">
+                             <a href="#">Conference</a>
+                             <ul>
+                                 <li><a href="conference.html">Inquiries</a></li>
+                                 <li><a href="conference-calendar.html">Calandar</a></li>
+                                 <li><a href="conference-rooms.html">Rooms</a></li>
+                             </ul>
+                         </li>
+                         <li class="sub-with-sub">
+                             <a href="#">Parking</a>
+                             <ul>
+                                 <li><a href="{{route('add-new-parking')}}">Add Parking</a></li>
+                                 <li><a href="parking.html">Inquiries</a></li>
+                                 <li><a href="parking-bays.html">Spaces</a></li>
+                             </ul>
+                         </li>
+                         <li><a href="bus-routes.html">Bus Routes</a></li>
+                     </ul>
+                 </div><!-- sub-item -->
+             </li>
+             <li class="nav-item with-sub ">
+                 <a class="nav-link" href="#">
+                     <i class="icon ion-ios-color-filter-outline"></i>
+                     <span>Community</span>
+                 </a>
+                 <div class="sub-item">
+                     <ul>
+                         <li><a href="{{route('admin-events')}}">Events</a></li>
+                         <li class="sub-with-sub">
+                             <a href="#">Blog</a>
+                             <ul>
+                                 <li><a href="{{route('add-blog')}}">Add Blog</a></li>
+                                 <li><a href="{{route('blog')}}">Blogs</a></li>
+                             </ul>
+                         </li>
+                     </ul>
+                 </div><!-- dropdown-menu -->
+             </li>
+         </ul>
+     </div><!-- container -->
+ </div><!-- slim-navbar -->

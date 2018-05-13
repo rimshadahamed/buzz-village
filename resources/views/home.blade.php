@@ -90,7 +90,7 @@
                         <div class="col-lg-6 mg-t-20 mg-sm-t-30 mg-lg-t-0"></div>
                         <div class="card card-blog-split">
                             <div class="row no-gutters">
-                                <div class="col-md-5 col-lg-6 col-xl-5">
+                                <div class="col-md-5 col-lg-6 col-xl-5" style="height: 260px;">
                                     <figure>
                                         <img src="../img/img19.jpg" class="img-fit-cover" alt="">
                                     </figure>
@@ -108,7 +108,7 @@
                         <div class="col-lg-6 mg-t-20 mg-sm-t-30 mg-lg-t-0"></div>
                         <div class="card card-blog-split">
                             <div class="row no-gutters">
-                                <div class="col-md-5 col-lg-6 col-xl-5">
+                                <div class="col-md-5 col-lg-6 col-xl-5" style="height: 260px;">
                                     <figure>
                                         <img src="../img/img19.jpg" class="img-fit-cover" alt="">
                                     </figure>

@@ -27,6 +27,10 @@ Route::get('/events', 'NavigationController@toEvents')->name('events');
 Route::get('/blog', 'NavigationController@toBlog')->name('blog');
 Route::get('/parking', 'NavigationController@toParking')->name('parking');
 
+Route::get('/social', 'NavigationController@toSocial')->name('social');
+Route::get('/rewards', 'NavigationController@toRewards')->name('rewards');
+Route::get('/directory', 'NavigationController@toDirectory')->name('directory');
+
 
 Route::get('auth/logout', 'Auth\LoginController@logout');
 
@@ -43,3 +47,21 @@ Route::post('officeForm', 'OfficeController@save_data');
 Route::post('conferenceForm', 'ConferenceController@save_data');
 Route::post('eventsForm', 'EventController@save_data');
 Route::post('parkingForm', 'ParkingController@save_data');
+
+
+
+
+
+
+Route::get('/admin', 'AdminNavigationController@toAdmin');
+
+Route::get('/admin-dashboard', 'AdminNavigationController@toAdminDashbord')->name('admin-dashboard');
+
+
+Route::get('/add-blog', 'AdminNavigationController@toAddBlog')->name('add-blog');
+Route::get('/add-directories', 'AdminNavigationController@toAddDirectories')->name('add-directories');
+Route::get('/add-new-parking', 'AdminNavigationController@toAddNewParking')->name('add-new-parking');
+Route::get('/add-rewards', 'AdminNavigationController@toAddRewards')->name('add-rewards');
+Route::get('/admin-events', 'AdminNavigationController@toAdminEvents')->name('admin-events');
+
+
