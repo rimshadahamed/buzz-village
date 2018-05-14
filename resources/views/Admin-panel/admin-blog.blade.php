@@ -15,6 +15,7 @@
             <h6 class="slim-pagetitle">From the Blog</h6>
         </div><!-- slim-pageheader -->
 
+    @foreach($data as $d)
         <!-- blog block -->
         <div class="slim-mainpanel">
             <div class="container pd-t-50">
@@ -25,13 +26,13 @@
                             <div class="row no-gutters">
                                 <div class="col-md-5 col-lg-6 col-xl-5" style="height: 50%">
                                     <figure>
-                                        <img src="../img/img19.jpg" class="img-fit-cover" alt="">
+                                        <img src="../images/{{ $d->image }}" class="img-fit-cover" alt="">
                                     </figure>
                                 </div><!-- col-4 -->
                                 <div class="col-md-7 col-lg-6 col-xl-7">
-                                    <p class="blog-category tx-danger">History</p>
-                                    <h5 class="blog-title"><a href="">17 Brilliant Short Novels You Can Read in a Sitting</a></h5>
-                                    <p class="blog-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Nascetur ridiculus mus. Donec quam felis, ultricies nec...</p>
+                                    <p class="blog-category tx-danger">{{ $d->blog_title }}</p>
+                                    <h5 class="blog-title"><a href="">{{ $d->meta_title }}</a></h5>
+                                    <p class="blog-text">{{ $d->description }}</p>
                                     <span class="blog-date">Mar 11, 2017, 11:30am</span>
                                 </div><!-- col-8 -->
                             </div><!-- row -->
@@ -40,6 +41,8 @@
                 </div>
             </div>
         </div>
+        @endforeach
+
 
     </div>
 </div>

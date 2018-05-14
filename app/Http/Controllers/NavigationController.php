@@ -56,7 +56,8 @@ class NavigationController extends Controller
     }
     public function toBlog()
     {
-        return view('blog');
+        $data = DB::table('blog')->get();
+        return view('blog',['data' => $data]);
     }
     public function toParking()
     {

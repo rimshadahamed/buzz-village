@@ -10,10 +10,9 @@ class AdminNavigationController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+         $this->middleware('auth');
+
     }
-
-
 
     public function toAdmin()
     {
@@ -50,7 +49,8 @@ class AdminNavigationController extends Controller
 
     public function toAdminblog()
     {
-        return view('Admin-panel.admin-blog');
+        $data = DB::table('blog')->get();
+        return view('Admin-panel.admin-blog',['data' => $data]);
     }
 
 

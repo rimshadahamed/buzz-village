@@ -48,8 +48,8 @@ Route::post('conferenceForm', 'ConferenceController@save_data');
 Route::post('eventsForm', 'EventController@save_data');
 Route::post('parkingForm', 'ParkingController@save_data');
 
-
-
+Route::post('admin-eventsForm', 'AdmineventController@save_data');
+Route::post('blogForm', 'BlogController@save_data');
 
 
 
