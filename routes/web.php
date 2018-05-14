@@ -64,5 +64,7 @@ Route::get('/add-directories', 'AdminNavigationController@toAddDirectories')->na
 Route::get('/add-new-parking', 'AdminNavigationController@toAddNewParking')->name('add-new-parking');
 Route::get('/add-rewards', 'AdminNavigationController@toAddRewards')->name('add-rewards');
 Route::get('/admin-events', 'AdminNavigationController@toAdminEvents')->name('admin-events');
-
+Route::get('/admin-facility', 'AdminNavigationController@toAdminFacility')->name('admin-facility');
+Route::get('/admin-office', 'AdminNavigationController@toAdminOffice')->name('admin-office');
+Route::get('/admin-my-office', 'AdminNavigationController@toAdminMyOffice')->name('admin-my-office');
 

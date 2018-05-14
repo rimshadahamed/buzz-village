@@ -218,8 +218,8 @@
                  </a>
                  <div class="sub-item">
                      <ul>
-                         <li><a href="facility.html">Facilities</a></li>
-                         <li><a href="office.html">Office</a></li>
+                         <li><a href="{{route('admin-facility')}}">Facilities</a></li>
+                         <li><a href="{{route('admin-office')}}">Office</a></li>
                          <li class="sub-with-sub">
                              <a href="#">Conference</a>
                              <ul>

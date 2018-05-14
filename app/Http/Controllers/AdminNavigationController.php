@@ -52,4 +52,20 @@ class AdminNavigationController extends Controller
     {
         return view('Admin-panel.admin-blog');
     }
+
+
+    public function toAdminFacility()
+    {
+        return view('Admin-panel.admin-facility');
+    }
+
+    public function toAdminOffice()
+    {
+        return view('Admin-panel.admin-office');
+    }
+
+    public function toAdminMyOffice()
+    {
+        return view('Admin-panel.admin-my-office');
+    }
 }
