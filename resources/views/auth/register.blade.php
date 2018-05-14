@@ -134,7 +134,7 @@
             <div class="signup-separator"><span>or signup using</span></div>
 
             <a  href="{{url('/redirect')}}"  class="btn btn-facebook btn-block">Sign Up Using Facebook</a>
-            <button class="btn btn-twitter btn-block">Sign Up Using Twitter</button>
+            <a href="{{url('/login/twitter')}}" class="btn btn-twitter btn-block">Sign Up Using Twitter</a>
 
             <p class="mg-t-40 mg-b-0">Already have an account? <a href="">Sign In</a></p>
 

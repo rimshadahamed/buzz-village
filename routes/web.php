@@ -37,9 +37,10 @@ Route::get('auth/logout', 'Auth\LoginController@logout');
 Auth::routes();
 
 Route::get('/redirect', 'FacebookAuthController@redirect');
-
-
 Route::get('/callback', 'FacebookAuthController@callback');
+
+Route::get('login/twitter', 'TwitterAuthController@redirect');
+Route::get('login/twitter/callback', 'TwitterAuthController@callback');
 
 
 Route::post('facilityForm', 'FacilityController@save_data');

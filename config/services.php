@@ -36,14 +36,14 @@ return [
     ],
 
     'facebook' => [
-        'client_id' => env("FB_APP",'223935168192832'),         // Your GitHub Client ID
-        'client_secret' => env('6f13dc2bd2796e7234cd7209640cbe3f'), // Your GitHub Client Secret
+        'client_id' => env("FB_APP",'223935168192832'),
+        'client_secret' => env('6f13dc2bd2796e7234cd7209640cbe3f'),
         'redirect' => 'http://localhost/_oauth/facebook',
     ],
 
-    'facebook' => [
-        'client_id' => env("FB_APP",'223935168192832'),         // Your GitHub Client ID
-        'client_secret' => env('6f13dc2bd2796e7234cd7209640cbe3f'), // Your GitHub Client Secret
+    'twitter' => [
+        'client_id' => env('921376484-IQBfS1bSmjmFrARCqv9xYEjxPZjb9J3ymth4YJGi'),
+        'client_secret' => env('i8V9Ib94dnIU4ll2Ops2bDNoBElDtzqRSySyiOf7ulAiS'),
         'redirect' => 'http://localhost:8000/callback',
     ],
 
