@@ -1,0 +1,268 @@
+<title>Admin-rewards | Business Village - Connect</title>
+@include('partials.header')
+
+<body class="dashboard-4">
+
+@include('partials.admin-topmenu')
+<div class="slim-mainpanel">
+    <div class="container">
+        <div class="slim-pageheader">
+            <ol class="breadcrumb slim-breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Building</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Conference Rooms</li>
+            </ol>
+            <h6 class="slim-pagetitle">Conference Rooms</h6>
+        </div><!-- slim-pageheader -->
+
+        <div class="section-wrapper mg-t-20">
+            <label class="section-title">My Conference Room Bookings</label>
+            <p class="mg-b-20 mg-sm-b-40">View my bookings for my conference rooms</p>
+
+            <div class="table-responsive">
+                <table class="table table-hover mg-b-0">
+                    <thead>
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Conference Date</th>
+                        <th>Time Slot</th>
+                        <th>Conference Size</th>
+                        <th>Arrangements</th>
+                        <th>Status</th>
+                        <th>Booked Room</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">3910</th>
+                        <td>29.12.18</td>
+                        <td>4 - 5 pm</td>
+                        <td>20 Guests</td>
+                        <td>Tea & Coffee</td>
+                        <td>Booked</td>
+                        <td>12A</td>
+                        <td><a href="my-conference-booking.html"><i class="fa fa-eye"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3911</th>
+                        <td>29.04.18</td>
+                        <td>10 - 12 am</td>
+                        <td>5 Guests</td>
+                        <td>No Arrangement</td>
+                        <td>Pending</td>
+                        <td>-</td>
+                        <td><a href="my-conference-booking.html"><i class="fa fa-eye"></i></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div><!-- table-responsive -->
+        </div><!-- section-wrapper -->
+
+
+        <div class="section-wrapper mg-t-20">
+            <label class="section-title">Want to book a conference room?</label>
+            <p class="mg-b-20 mg-sm-b-40">Send us an inquiry and our team will revert back to you ASAP.</p>
+
+            <div class="form-layout form-layout-2">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="form-control-label">Firstname: <span class="tx-danger">*</span></label>
+                            <input class="form-control" type="text" name="firstname" value="John Paul" placeholder="Enter firstname">
+                        </div>
+                    </div><!-- col-4 -->
+                    <div class="col-md-4 mg-t--1 mg-md-t-0">
+                        <div class="form-group mg-md-l--1">
+                            <label class="form-control-label">Lastname: <span class="tx-danger">*</span></label>
+                            <input class="form-control" type="text" name="lastname" value="McDoe" placeholder="Enter lastname">
+                        </div>
+                    </div><!-- col-4 -->
+                    <div class="col-md-4 mg-t--1 mg-md-t-0">
+                        <div class="form-group mg-md-l--1">
+                            <label class="form-control-label">Email address: <span class="tx-danger">*</span></label>
+                            <input class="form-control" type="text" name="email" value="johnpaul@yourdomain.com" placeholder="Enter email address">
+                        </div>
+                    </div><!-- col-4 -->
+                    <div class="col-md-8">
+                        <div class="form-group bd-t-0-force">
+                            <label class="form-control-label">Space Required: <span class="tx-danger">*</span></label>
+                            <select id="select2-a" class="form-control" data-placeholder="Choose purpose">
+                                <option label="Choose size"></option>
+                                <option value="5" selected>5 guests</option>
+                                <option value="10">10 guests</option>
+                                <option value="25">25 guests</option>
+                                <option value="50">50 guests</option>
+                                <option value="100">100 guests</option>
+                            </select>
+                        </div>
+                    </div><!-- col-8 -->
+                    <div class="col-md-4">
+                        <div class="form-group bd-t-0-force">
+                            <label class="form-control-label">Arrangements: <span class="tx-danger">*</span></label>
+                            <select id="select2-a" class="form-control" data-placeholder="Arrangements">
+                                <option label="Choose Arrangement"></option>
+                                <option value="Tea & Coffee" selected>Tea & Coffee</option>
+                                <option value="Breakfast">Breakfast</option>
+                                <option value="Lunch">Lunch</option>
+                                <option value="Snacks & Tea">Snacks & Tea</option>
+                                <option value="Dinner">Dinner</option>
+                            </select>
+                        </div>
+                    </div><!-- col-8 -->
+
+                    <div class="col-md-6">
+                        <div class="form-group bd-t-0-force">
+                            <label class="form-control-label">Select Date: <span class="tx-danger">*</span></label>
+                            <div class="input-group-text">
+                                <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                                <input type="text" class="form-control fc-datepicker" placeholder=" MM/DD/YYYY">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="form-group bd-t-0-force">
+                            <label class="form-control-label">Select Date: <span class="tx-danger">*</span></label>
+                            <div class="input-group-text">
+                                <i class="fa fa-clock-o tx-16 lh-0 op-6"></i>
+                                <input id="tpBasic" type="text" class="form-control" placeholder="Set time">
+                            </div>
+                        </div><!-- input-group-prepend -->
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group bd-t-0-force">
+                            <label class="form-control-label">Comments: <span class="tx-danger">*</span></label>
+                            <input class="form-control" type="text" name="comments" value="Any Special Requests" placeholder="Enter Comments">
+                        </div>
+                    </div><!-- col-4 -->
+
+                </div><!-- row -->
+                <div class="form-layout-footer bd pd-20 bd-t-0">
+                    <button class="btn btn-primary bd-0">Submit Form</button>
+                    <button class="btn btn-secondary bd-0">Cancel</button>
+                </div><!-- form-group -->
+            </div><!-- form-layout -->
+        </div><!-- section-wrapper -->
+
+        <div class="section-wrapper mg-t-20">
+            <label class="section-title">Conference Rooms</label>
+            <p class="mg-b-20 mg-sm-b-40">View all conference Rooms in full angles.</p>
+            <div class="row">
+
+                <div class="col-lg-4">
+                    <div class="card bd-0">
+                        <img class="img-fluid" src="../img/img18.jpg" alt="Image">
+                        <figcaption class="overlay-body d-flex align-items-end justify-content-center">
+                            <div class="img-option">
+                                <a href="my-" class="img-option-link"><div><i class="icon ion-ios-eye"></i><span>360</span></div></a>
+                            </div>
+                        </figcaption>
+                    </div>
+                    <div class="card-body bd bd-t-0">
+                        <p class="card-text">Conference Room - 1A.</p>
+                        <p class="card-text">Included: Projector / Notepads / Water</p>
+                        <button class="btn btn-indigo active btn-block mg-b-10">10 Guest</button>
+                        <button class="btn btn-success active btn-block mg-b-10">View Location</button>
+                        <button class="btn btn-warning active btn-block mg-b-10">Edit</button>
+                    </div>
+                </div><!-- card -->
+
+                <div class="col-lg-4">
+                    <div class="card bd-0">
+                        <img class="img-fluid" src="../img/img18.jpg" alt="Image">
+                        <figcaption class="overlay-body d-flex align-items-end justify-content-center">
+                            <div class="img-option">
+                                <a href="#" class="img-option-link"><div><i class="icon ion-ios-eye"></i><span>360</span></div></a>
+                            </div>
+                        </figcaption>
+                    </div>
+                    <div class="card-body bd bd-t-0">
+                        <p class="card-text">Conference Room - 1A</p>
+                        <p class="card-text">Included: Projector / Notepads / Water</p>
+                        <button class="btn btn-indigo active btn-block mg-b-10">25 Guest</button>
+                        <button class="btn btn-success active btn-block mg-b-10">View Location</button>
+                        <button class="btn btn-warning active btn-block mg-b-10">Edit</button>
+                    </div>
+                </div><!-- card -->
+                <div class="col-lg-4">
+                    <div class="card bd-0">
+                        <img class="img-fluid" src="../img/img18.jpg" alt="Image">
+                        <figcaption class="overlay-body d-flex align-items-end justify-content-center">
+                            <div class="img-option">
+                                <a href="#" class="img-option-link"><div><i class="icon ion-ios-eye"></i><span>360</span></div></a>
+                            </div>
+                        </figcaption>
+                    </div>
+                    <div class="card-body bd bd-t-0">
+                        <p class="card-text">Conference Room - 2A</p>
+                        <p class="card-text">Included: Projector / Notepads / Water</p>
+                        <button class="btn btn-indigo active btn-block mg-b-10">50 Guest</button>
+                        <button class="btn btn-success active btn-block mg-b-10">View Location</button>
+                        <button class="btn btn-warning active btn-block mg-b-10">Edit</button>
+                    </div>
+                </div><!-- card -->
+                <div class="col-lg-4 pd-t-30">
+                    <div class="card bd-0">
+                        <img class="img-fluid" src="../img/img18.jpg" alt="Image">
+                        <figcaption class="overlay-body d-flex align-items-end justify-content-center">
+                            <div class="img-option">
+                                <a href="#" class="img-option-link"><div><i class="icon ion-ios-eye"></i><span>360</span></div></a>
+                            </div>
+                        </figcaption>
+                    </div>
+                    <div class="card-body bd bd-t-0">
+                        <p class="card-text">Conference Room - 4C</p>
+                        <p class="card-text">Included: Projector / Notepads / Water</p>
+                        <button class="btn btn-indigo active btn-block mg-b-10">100 Guest</button>
+                        <button class="btn btn-success active btn-block mg-b-10">View Location</button>
+                        <button class="btn btn-warning active btn-block mg-b-10">Edit</button>
+                    </div>
+                </div><!-- card -->
+                <div class="col-lg-4 pd-t-30">
+                    <div class="card bd-0">
+                        <img class="img-fluid" src="../img/img18.jpg" alt="Image">
+                        <figcaption class="overlay-body d-flex align-items-end justify-content-center">
+                            <div class="img-option">
+                                <a href="#" class="img-option-link"><div><i class="icon ion-ios-eye"></i><span>360</span></div></a>
+                            </div>
+                        </figcaption>
+                    </div>
+                    <div class="card-body bd bd-t-0">
+                        <p class="card-text">Conference Room - 10B</p>
+                        <p class="card-text">Included: Projector / Notepads / Water</p>
+                        <button class="btn btn-indigo active btn-block mg-b-10">5 Guest</button>
+                        <button class="btn btn-success active btn-block mg-b-10">View Location</button>
+                        <button class="btn btn-warning active btn-block mg-b-10">Edit</button>
+                    </div>
+                </div><!-- card -->
+                <div class="col-lg-4 pd-t-30">
+                    <div class="card bd-0">
+                        <img class="img-fluid" src="../img/img18.jpg" alt="Image">
+                        <figcaption class="overlay-body d-flex align-items-end justify-content-center">
+                            <div class="img-option">
+                                <a href="#" class="img-option-link"><div><i class="icon ion-ios-eye"></i><span>360</span></div></a>
+                            </div>
+                        </figcaption>
+                    </div>
+                    <div class="card-body bd bd-t-0">
+                        <p class="card-text">Conference Room - 3C</p>
+                        <p class="card-text">Included: Projector / Notepads / Water</p>
+                        <button class="btn btn-indigo active btn-block mg-b-10">25 Guest</button>
+                        <button class="btn btn-success active btn-block mg-b-10">View Location</button>
+                        <button class="btn btn-warning active btn-block mg-b-10">Edit</button>
+                    </div><!-- card -->
+                </div><!-- row -->
+            </div><!-- section-wrapper -->
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+@include('partials.footer')

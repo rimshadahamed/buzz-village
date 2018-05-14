@@ -34,7 +34,7 @@ class AdminNavigationController extends Controller
     }
     public function toAddDirectories()
     {
-        return view('Admin-panel.admin-directories');
+        return view('Admin-panel.add-directories');
     }
 
     public function toAddNewParking()
@@ -67,5 +67,44 @@ class AdminNavigationController extends Controller
     public function toAdminMyOffice()
     {
         return view('Admin-panel.admin-my-office');
+    }
+
+
+
+    public function toAdminSocial()
+    {
+        return view('Admin-panel.admin-social');
+    }
+    public function toAdminRewards()
+    {
+        return view('Admin-panel.admin-rewards');
+    }
+    public function toAdminDirectories()
+    {
+        return view('Admin-panel.admin-directories');
+    }
+
+    public function toAdminConferenceInquiries()
+    {
+        return view('Admin-panel.admin-conference-inquiries');
+    }
+    public function toAdminConferenceCalendar()
+    {
+        return view('Admin-panel.admin-conference-calendar');
+    }
+    public function toAdminConferenceRooms()
+    {
+        return view('Admin-panel.admin-conference-rooms');
+    }
+
+
+    public function toAdminParkingInquiries()
+    {
+        return view('Admin-panel.admin-parking-inquiries');
+    }
+
+    public function toAdminParkingSpaces()
+    {
+        return view('Admin-panel.admin-parking-spaces');
     }
 }

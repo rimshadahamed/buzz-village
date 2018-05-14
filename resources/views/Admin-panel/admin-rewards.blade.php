@@ -1,11 +1,10 @@
-<title>Rewards | Business Village - Connect</title>
+<title>Admin-rewards | Business Village - Connect</title>
 @include('partials.header')
 
 <body class="dashboard-4">
 
-@include('partials.topmenu')
-
- <div class="slim-mainpanel">
+@include('partials.admin-topmenu')
+<div class="slim-mainpanel">
     <div class="container pd-t-50">
         <div class="row">
             <div style="text-align:center;">
@@ -98,26 +97,7 @@
     </div>
 </div>
 
-<script>
-    $(function(){
-        'use strict'
 
-        $('#vmap').vectorMap({
-            map: 'world_en',
-            backgroundColor: '#fff',
-            color: '#ffffff',
-            hoverOpacity: 0.7,
-            selectedColor: '#666666',
-            enableZoom: true,
-            showTooltip: true,
-            scaleColors: ['#17A2B8', '#006491'],
-            values: sample_data,
-            normalizeFunction: 'polynomial'
-        });
 
-    });
-</script>
 </body>
-
-
 @include('partials.footer')
