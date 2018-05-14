@@ -4,7 +4,6 @@
 <body class="dashboard-4">
 
 @include('partials.admin-topmenu')
-
 <div class="slim-mainpanel">
     <div class="container">
         <div class="slim-pageheader">
@@ -107,8 +106,4 @@
     </div>
 </div>
 
-
-
-
-</body>
 @include('partials.footer')

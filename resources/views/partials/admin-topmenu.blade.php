@@ -182,15 +182,15 @@
                          </li>
                      </ul></li>
              <li class="nav-item">
-                 <a class="nav-link" href="social.html">
+                 <a class="nav-link" href="{{route('admin-social')}}">
                      <i class="icon ion-ios-barcode-outline"></i>
                      <span>Social</span>
                  </a>
 
 
              </li>
-             <li class="nav-item">
-                 <a class="nav-link" href="{{route('directory')}}">
+             <li class="nav-item with-sub">
+                 <a class="nav-link" href="{{route('admin-directories')}}">
                      <i class="icon ion-ios-book-outline"></i>
                      <span>Directory</span>
                  </a>
@@ -200,14 +200,14 @@
                      </ul>
                  </div>
              </li>
-             <li class="nav-item">
-                 <a class="nav-link" href="{{route('rewards')}}">
+             <li class="nav-item with-sub">
+                 <a class="nav-link" href="{{route('admin-rewards')}}">
                      <i class="icon ion-ios-star-outline"></i>
                      <span>Rewards</span>
                  </a>
                  <div class="sub-item">
                      <ul>
-                         <li><a href="{{route('add-rewards')}}">Add directory</a></li>
+                         <li><a href="{{route('add-rewards')}}">Add rewards</a></li>
                      </ul>
                  </div>
              </li>
@@ -218,22 +218,22 @@
                  </a>
                  <div class="sub-item">
                      <ul>
-                         <li><a href="facility.html">Facilities</a></li>
-                         <li><a href="office.html">Office</a></li>
+                         <li><a href="{{route('admin-facility')}}">Facilities</a></li>
+                         <li><a href="{{route('admin-office')}}">Office</a></li>
                          <li class="sub-with-sub">
                              <a href="#">Conference</a>
                              <ul>
-                                 <li><a href="conference.html">Inquiries</a></li>
-                                 <li><a href="conference-calendar.html">Calandar</a></li>
-                                 <li><a href="conference-rooms.html">Rooms</a></li>
+                                 <li><a href="{{route('admin-conference-inquiries')}}">Inquiries</a></li>
+                                 <li><a href="{{route('admin-conference-calendar')}}">Calendar</a></li>
+                                 <li><a href="{{route('admin-conference-rooms')}}">Rooms</a></li>
                              </ul>
                          </li>
                          <li class="sub-with-sub">
                              <a href="#">Parking</a>
                              <ul>
                                  <li><a href="{{route('add-new-parking')}}">Add Parking</a></li>
-                                 <li><a href="parking.html">Inquiries</a></li>
-                                 <li><a href="parking-bays.html">Spaces</a></li>
+                                 <li><a href="{{route('admin-parking-inquiries')}}">Inquiries</a></li>
+                                 <li><a href="{{route('admin-parking-spaces')}}">Spaces</a></li>
                              </ul>
                          </li>
                          <li><a href="bus-routes.html">Bus Routes</a></li>

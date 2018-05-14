@@ -65,5 +65,18 @@ Route::get('/add-directories', 'AdminNavigationController@toAddDirectories')->na
 Route::get('/add-new-parking', 'AdminNavigationController@toAddNewParking')->name('add-new-parking');
 Route::get('/add-rewards', 'AdminNavigationController@toAddRewards')->name('add-rewards');
 Route::get('/admin-events', 'AdminNavigationController@toAdminEvents')->name('admin-events');
+Route::get('/admin-facility', 'AdminNavigationController@toAdminFacility')->name('admin-facility');
+Route::get('/admin-office', 'AdminNavigationController@toAdminOffice')->name('admin-office');
+Route::get('/admin-my-office', 'AdminNavigationController@toAdminMyOffice')->name('admin-my-office');
 
 
+Route::get('/admin-social', 'AdminNavigationController@toAdminSocial')->name('admin-social');
+Route::get('/admin-rewards', 'AdminNavigationController@toAdminRewards')->name('admin-rewards');
+Route::get('/admin-directories', 'AdminNavigationController@toAdminDirectories')->name('admin-directories');
+
+Route::get('/admin-conference-inquiries', 'AdminNavigationController@toAdminConferenceInquiries')->name('admin-conference-inquiries');
+Route::get('/admin-conference-calendar', 'AdminNavigationController@toAdminConferencecalendar')->name('admin-conference-calendar');
+Route::get('/admin-conference-rooms', 'AdminNavigationController@toAdminConferencerooms')->name('admin-conference-rooms');
+
+Route::get('/admin-parking-inquiries', 'AdminNavigationController@toAdminParkingInquiries')->name('admin-parking-inquiries');
+Route::get('/admin-parking-spaces', 'AdminNavigationController@toAdminParkingSpaces')->name('admin-parking-spaces');
