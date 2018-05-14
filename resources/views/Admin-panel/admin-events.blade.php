@@ -60,6 +60,8 @@
 
 
         <div class="section-wrapper mg-t-20">
+            <form class="" method="POST" enctype="multipart/form-data" action="{{url('admin-eventsForm') }}">
+                {{csrf_field()}}
             <label class="section-title">Add an event</label>
             <p class="mg-b-20 mg-sm-b-40"></p>
 
@@ -68,43 +70,73 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="form-control-label">Event Name: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="firstname" value="John Paul" placeholder="Enter firstname">
+                            <input class="form-control" type="text" name="event_name" value="John Paul" placeholder="">
+                            @if ($errors->has('event_name'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('event_name') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-md-4 mg-t--1 mg-md-t-0">
                         <div class="form-group mg-md-l--1">
                             <label class="form-control-label">Description: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="lastname" value="McDoe" placeholder="Enter lastname">
+                            <input class="form-control" type="text" name="description" value="McDoe" placeholder=" ">
+                            @if ($errors->has('description'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('description') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-md-4 mg-t--1 mg-md-t-0">
                         <div class="form-group mg-md-l--1">
                             <label class="form-control-label">Email address: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="email" value="johnpaul@yourdomain.com" placeholder="Enter email address">
+                            <input class="form-control" type="text" name="email" value="johnpaul@yourdomain.com" placeholder="  ">
+                            @if ($errors->has('email'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-md-4 mg-t--1 mg-md-t-0">
                         <div class="form-group mg-md-l--1">
                             <label class="form-control-label">Website: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="email" value="johnpaul@yourdomain.com" placeholder="Enter email address">
+                            <input class="form-control" type="text" name="website" value="johnpaul@yourdomain.com" placeholder="">
+                            @if ($errors->has('website'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('website') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-md-4 mg-t--1 mg-md-t-0">
                         <div class="form-group mg-md-l--1">
                             <label class="form-control-label">Social: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="email" value="johnpaul@yourdomain.com" placeholder="Enter email address">
+                            <input class="form-control" type="text" name="social" value="johnpaul@yourdomain.com" placeholder="">
+                            @if ($errors->has('social'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('social') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-md-8">
                         <div class="form-group bd-t-0-force">
                             <label class="form-control-label">Contact Number: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="address" value="05X XXX XXXX" placeholder="Mobile Number">
+                            <input class="form-control" type="text" name="contact_no" value="05X XXX XXXX" placeholder="">
+                            @if ($errors->has('contact_no'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('contact_no') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-8 -->
                     <div class="col-md-4">
                         <div class="form-group mg-md-l--1 bd-t-0-force">
                             <label class="form-control-label mg-b-0-force">Purpose: <span class="tx-danger">*</span></label>
-                            <select id="select2-a" class="form-control" data-placeholder="Choose purpose">
+                            <select id="purpose" name="purpose" class="form-control" data-placeholder="Choose purpose">
                                 <option label="Choose block"></option>
                                 <option value="Retail" selected>Corporate</option>
                                 <option value="Commercial">Public</option>
@@ -117,7 +149,12 @@
                             <label class="form-control-label">Event Date: <span class="tx-danger">*</span></label>
                             <div class="input-group-text">
                                 <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
-                                <input type="text" class="form-control fc-datepicker" placeholder=" MM/DD/YYYY">
+                                <input type="text" name="date" class="form-control fc-datepicker" placeholder=" MM/DD/YYYY">
+                                @if ($errors->has('date'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('date') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -127,6 +164,7 @@
                     <button class="btn btn-secondary bd-0">Cancel</button>
                 </div><!-- form-group -->
             </div><!-- form-layout -->
+            </form>
         </div><!-- section-wrapper -->
 
 

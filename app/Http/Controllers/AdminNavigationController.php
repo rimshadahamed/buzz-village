@@ -49,6 +49,7 @@ class AdminNavigationController extends Controller
 
     public function toAdminblog()
     {
-        return view('Admin-panel.admin-blog');
+        $data = DB::table('blog')->get();
+        return view('Admin-panel.admin-blog',['data' => $data]);
     }
 }
