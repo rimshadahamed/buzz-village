@@ -17,6 +17,8 @@
 
 
         <div class="section-wrapper mg-t-20">
+            <form class="" method="POST" enctype="multipart/form-data" action="{{url('admin-conference-rooms') }}">
+                {{csrf_field()}}
             <label class="section-title">Add a conference room?</label>
             <p class="mg-b-20 mg-sm-b-40">Add a new conference here.</p>
 
@@ -25,13 +27,18 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="form-control-label">Room No: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="firstname" value="12A" placeholder="Enter No">
+                            <input class="form-control" type="text" name="room_no" value="12A" placeholder="">
+                            @if ($errors->has('room_no'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('room_no') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-md-4">
                         <div class="form-group bd-t-0-force">
                             <label class="form-control-label">Room Size: <span class="tx-danger">*</span></label>
-                            <select id="select2-a" class="form-control" data-placeholder="Choose purpose">
+                            <select id="room_size" name="room_size" class="form-control" data-placeholder="Choose Room Size">
                                 <option label="Choose size"></option>
                                 <option value="5" selected>5 guests</option>
                                 <option value="10">10 guests</option>
@@ -44,7 +51,7 @@
                     <div class="col-md-4">
                         <div class="form-group bd-t-0-force">
                             <label class="form-control-label">Arrangements: <span class="tx-danger">*</span></label>
-                            <select id="select2-a" class="form-control" data-placeholder="Arrangements">
+                            <select id="arrangement" name="arrangement" class="form-control" data-placeholder="Arrangements">
                                 <option label="Choose Arrangement"></option>
                                 <option value="Tea & Coffee" selected>Tea & Coffee</option>
                                 <option value="Breakfast">Breakfast</option>
@@ -57,22 +64,37 @@
                     <div class="col-md-12">
                         <div class="form-group bd-t-0-force">
                             <label class="form-control-label">Includes: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="comments" value="Any Special Requests" placeholder="Enter Comments">
+                            <input class="form-control" type="text" name="includes" value="Any Special Requests" placeholder="">
+                            @if ($errors->has('includes'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('includes') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-md-12">
                         <div class="form-group mg-md-l--1 bd-t-0-force">
                             <label class="form-control-label mg-b-0-force">Upload 360 Image: <span class="tx-danger">*</span></label>
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile">
+                                <input type="file" class="custom-file-input" id="image360" name="image360">
                                 <label class="custom-file-label" for="customFile">Choose file</label>
+                                @if ($errors->has('image360'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('image360') }}</strong>
+                                    </span>
+                                @endif
                             </div></div></div><!-- custom-file -->
                     <div class="col-md-12">
                         <div class="form-group mg-md-l--1 bd-t-0-force">
                             <label class="form-control-label mg-b-0-force">Upload Location: <span class="tx-danger">*</span></label>
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile">
+                                <input type="file" class="custom-file-input" id="image" name="image">
                                 <label class="custom-file-label" for="customFile">Choose file</label>
+                                @if ($errors->has('image'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('image') }}</strong>
+                                    </span>
+                                @endif
                             </div></div></div><!-- custom-file -->
 
 
@@ -82,6 +104,7 @@
                     <button class="btn btn-secondary bd-0">Cancel</button>
                 </div><!-- form-group -->
             </div><!-- form-layout -->
+            </form>
         </div><!-- section-wrapper -->
 
 

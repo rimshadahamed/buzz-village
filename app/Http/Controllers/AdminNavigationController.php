@@ -56,12 +56,14 @@ class AdminNavigationController extends Controller
 
     public function toAdminFacility()
     {
-        return view('Admin-panel.admin-facility');
+        $data = DB::table('facility')->get();
+        return view('Admin-panel.admin-facility',['data' => $data]);
     }
 
     public function toAdminOffice()
     {
-        return view('Admin-panel.admin-office');
+        $data = DB::table('office')->get();
+        return view('Admin-panel.admin-office',['data' => $data]);
     }
 
     public function toAdminMyOffice()
@@ -86,7 +88,8 @@ class AdminNavigationController extends Controller
 
     public function toAdminConferenceInquiries()
     {
-        return view('Admin-panel.admin-conference-inquiries');
+        $data = DB::table('conference')->get();
+        return view('Admin-panel.admin-conference-inquiries',['data' => $data]);
     }
     public function toAdminConferenceCalendar()
     {

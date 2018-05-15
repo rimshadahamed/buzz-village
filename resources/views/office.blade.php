@@ -35,7 +35,7 @@
                     </tr>
                     </thead>
                     <tbody>
-
+                    @if ($data->isNotEmpty())
                     @foreach($data as $d)
                         @if( Auth::User()->email == $d->user)
                         <tr>
@@ -48,6 +48,13 @@
                         </tr>
                         @endif
                     @endforeach
+                    @else
+                        <tr>
+                            <td colspan="7" style="text-align: center;color: black">
+                                No data available For this Reference.
+                            </td>
+                        </tr>
+                    @endif
                     </tbody>
                 </table>
             </div><!-- table-responsive -->

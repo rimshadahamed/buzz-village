@@ -34,118 +34,156 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope="row">3910</th>
-                        <td>29.12.18</td>
-                        <td>4 - 5 pm</td>
-                        <td>20 Guests</td>
-                        <td>Tea & Coffee</td>
-                        <td>Booked</td>
-                        <td>12A</td>
-                        <td><a href="my-conference-booking.html"><i class="fa fa-eye"></i></a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3911</th>
-                        <td>29.04.18</td>
-                        <td>10 - 12 am</td>
-                        <td>5 Guests</td>
-                        <td>No Arrangement</td>
-                        <td>Pending</td>
-                        <td>-</td>
-                        <td><a href="my-conference-booking.html"><i class="fa fa-eye"></i></a></td>
-                    </tr>
+                    @if ($data->isNotEmpty())
+                        @foreach($data as $d)
+                                <tr>
+                                    <th scope="row">{{ $d->req_id }}</th>
+                                    <td>{{ $d->date }}</td>
+                                    <td>{{ $d->time }}</td>
+                                    <td>{{ $d->conf_size }} Guests</td>
+                                    <td>{{ $d->arrangements }}</td>
+                                    <td>{{ $d->status }}</td>
+                                    <td>{{ $d->booked_room }}</td>
+                                    <td><a href=""><i class="fa fa-eye"></i></a></td>
+                                </tr>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td colspan="7" style="text-align: center;color: black">
+                                No data available For this Reference.
+                            </td>
+                        </tr>
+                    @endif
                     </tbody>
                 </table>
             </div><!-- table-responsive -->
         </div><!-- section-wrapper -->
 
 
+
         <div class="section-wrapper mg-t-20">
-            <label class="section-title">Want to book a conference room?</label>
-            <p class="mg-b-20 mg-sm-b-40">Send us an inquiry and our team will revert back to you ASAP.</p>
+            <form class="" method="POST" enctype="multipart/form-data" action="{{url('admin-conference') }}">
+                {{csrf_field()}}
+                <label class="section-title">Want to book a conference room?</label>
+                <p class="mg-b-20 mg-sm-b-40">Send us an inquiry and our team will revert back to you ASAP.</p>
 
-            <div class="form-layout form-layout-2">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label class="form-control-label">Firstname: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="firstname" value="John Paul" placeholder="Enter firstname">
-                        </div>
-                    </div><!-- col-4 -->
-                    <div class="col-md-4 mg-t--1 mg-md-t-0">
-                        <div class="form-group mg-md-l--1">
-                            <label class="form-control-label">Lastname: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="lastname" value="McDoe" placeholder="Enter lastname">
-                        </div>
-                    </div><!-- col-4 -->
-                    <div class="col-md-4 mg-t--1 mg-md-t-0">
-                        <div class="form-group mg-md-l--1">
-                            <label class="form-control-label">Email address: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="email" value="johnpaul@yourdomain.com" placeholder="Enter email address">
-                        </div>
-                    </div><!-- col-4 -->
-                    <div class="col-md-8">
-                        <div class="form-group bd-t-0-force">
-                            <label class="form-control-label">Space Required: <span class="tx-danger">*</span></label>
-                            <select id="select2-a" class="form-control" data-placeholder="Choose purpose">
-                                <option label="Choose size"></option>
-                                <option value="5" selected>5 guests</option>
-                                <option value="10">10 guests</option>
-                                <option value="25">25 guests</option>
-                                <option value="50">50 guests</option>
-                                <option value="100">100 guests</option>
-                            </select>
-                        </div>
-                    </div><!-- col-8 -->
-                    <div class="col-md-4">
-                        <div class="form-group bd-t-0-force">
-                            <label class="form-control-label">Arrangements: <span class="tx-danger">*</span></label>
-                            <select id="select2-a" class="form-control" data-placeholder="Arrangements">
-                                <option label="Choose Arrangement"></option>
-                                <option value="Tea & Coffee" selected>Tea & Coffee</option>
-                                <option value="Breakfast">Breakfast</option>
-                                <option value="Lunch">Lunch</option>
-                                <option value="Snacks & Tea">Snacks & Tea</option>
-                                <option value="Dinner">Dinner</option>
-                            </select>
-                        </div>
-                    </div><!-- col-8 -->
+                <div class="form-layout form-layout-2">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="form-control-label">Firstname: <span class="tx-danger">*</span></label>
+                                <input class="form-control" type="text" name="firstname" value="John Paul" placeholder="Enter firstname">
+                                @if ($errors->has('firstname'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('firstname') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div><!-- col-4 -->
+                        <div class="col-md-4 mg-t--1 mg-md-t-0">
+                            <div class="form-group mg-md-l--1">
+                                <label class="form-control-label">Lastname: <span class="tx-danger">*</span></label>
+                                <input class="form-control" type="text" name="lastname" value="McDoe" placeholder="Enter lastname">
+                                @if ($errors->has('lastname'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('lastname') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div><!-- col-4 -->
+                        <div class="col-md-4 mg-t--1 mg-md-t-0">
+                            <div class="form-group mg-md-l--1">
+                                <label class="form-control-label">Email address: <span class="tx-danger">*</span></label>
+                                <input class="form-control" type="text" name="email" value="johnpaul@yourdomain.com" placeholder="Enter email address">
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div><!-- col-4 -->
+                        <div class="col-md-8">
+                            <div class="form-group bd-t-0-force">
+                                <label class="form-control-label">Space Required: <span class="tx-danger">*</span></label>
+                                <select id="space_required" name="space_required" class="form-control" data-placeholder="Choose purpose">
+                                    <option label="Choose size"></option>
+                                    <option value="5" selected>5 guests</option>
+                                    <option value="10">10 guests</option>
+                                    <option value="25">25 guests</option>
+                                    <option value="50">50 guests</option>
+                                    <option value="100">100 guests</option>
+                                </select>
+                                @if ($errors->has('space_required'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('space_required') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div><!-- col-8 -->
+                        <div class="col-md-4">
+                            <div class="form-group bd-t-0-force">
+                                <label class="form-control-label">Arrangements: <span class="tx-danger">*</span></label>
+                                <select id="arrangements" name="arrangements" class="form-control" data-placeholder="Arrangements">
+                                    <option label="Choose Arrangement"></option>
+                                    <option value="Tea & Coffee" selected>Tea & Coffee</option>
+                                    <option value="Breakfast">Breakfast</option>
+                                    <option value="Lunch">Lunch</option>
+                                    <option value="Snacks & Tea">Snacks & Tea</option>
+                                    <option value="Dinner">Dinner</option>
+                                </select>
+                            </div>
+                        </div><!-- col-8 -->
 
-                    <div class="col-md-6">
-                        <div class="form-group bd-t-0-force">
-                            <label class="form-control-label">Select Date: <span class="tx-danger">*</span></label>
-                            <div class="input-group-text">
-                                <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
-                                <input type="text" class="form-control fc-datepicker" placeholder=" MM/DD/YYYY">
+                        <div class="col-md-6">
+                            <div class="form-group bd-t-0-force">
+                                <label class="form-control-label">Select Date: <span class="tx-danger">*</span></label>
+                                <div class="input-group-text">
+                                    <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                                    <input name="date" type="text" class="form-control fc-datepicker" placeholder=" MM/DD/YYYY">
+                                </div>
+                                @if ($errors->has('date'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('date') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
-                    </div>
 
 
-                    <div class="col-md-6">
-                        <div class="form-group bd-t-0-force">
-                            <label class="form-control-label">Select Date: <span class="tx-danger">*</span></label>
-                            <div class="input-group-text">
-                                <i class="fa fa-clock-o tx-16 lh-0 op-6"></i>
-                                <input id="tpBasic" type="text" class="form-control" placeholder="Set time">
-                            </div>
-                        </div><!-- input-group-prepend -->
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group bd-t-0-force">
-                            <label class="form-control-label">Comments: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="comments" value="Any Special Requests" placeholder="Enter Comments">
+                        <div class="col-md-6">
+                            <div class="form-group bd-t-0-force">
+                                <label class="form-control-label">Select Date: <span class="tx-danger">*</span></label>
+                                <div class="input-group-text">
+                                    <i class="fa fa-clock-o tx-16 lh-0 op-6"></i>
+                                    <input id="time" name="time" type="text" class="form-control" placeholder="Set time">
+                                </div>
+                                @if ($errors->has('time'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('time') }}</strong>
+                                    </span>
+                                @endif
+                            </div><!-- input-group-prepend -->
                         </div>
-                    </div><!-- col-4 -->
+                        <div class="col-md-12">
+                            <div class="form-group bd-t-0-force">
+                                <label class="form-control-label">Comments: <span class="tx-danger">*</span></label>
+                                <input class="form-control" type="text" name="comments" value="Any Special Requests" placeholder="Enter Comments">
+                                @if ($errors->has('comments'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('comments') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div><!-- col-4 -->
 
-                </div><!-- row -->
-                <div class="form-layout-footer bd pd-20 bd-t-0">
-                    <button class="btn btn-primary bd-0">Submit Form</button>
-                    <button class="btn btn-secondary bd-0">Cancel</button>
-                </div><!-- form-group -->
-            </div><!-- form-layout -->
+                    </div><!-- row -->
+                    <div class="form-layout-footer bd pd-20 bd-t-0">
+                        <button class="btn btn-primary bd-0">Submit Form</button>
+                        <button class="btn btn-secondary bd-0">Cancel</button>
+                    </div><!-- form-group -->
+                </div><!-- form-layout -->
+            </form>
         </div><!-- section-wrapper -->
-
         <div class="section-wrapper mg-t-20">
             <label class="section-title">Conference Rooms</label>
             <p class="mg-b-20 mg-sm-b-40">View all conference Rooms in full angles.</p>

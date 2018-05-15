@@ -32,27 +32,23 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @if ($data->isNotEmpty())
+                        @foreach($data as $d)
                     <tr>
-                        <th scope="row">901</th>
-                        <td>Ontime</td>
-                        <td>1021</td>
-                        <td>Renewed</td>
+                        <th scope="row">{{ $d->office_no }}</th>
+                        <td>{{ $d->trade_license_validity }}</td>
+                        <td>{{ $d->space_required }}</td>
+                        <td>{{ $d->status }}</td>
                         <td><a href="my-office.html"><i class="fa fa-eye"></i></a></td>
                     </tr>
-                    <tr>
-                        <th scope="row">901</th>
-                        <td>Ontime</td>
-                        <td>1021</td>
-                        <td>Renewed</td>
-                        <td><a href="my-office.html"><i class="fa fa-eye"></i></a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">901</th>
-                        <td>Ontime</td>
-                        <td>1021</td>
-                        <td>Renewed</td>
-                        <td><a href="my-office.html"><i class="fa fa-eye"></i></a></td>
-                    </tr>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td colspan="7" style="text-align: center;color: black">
+                                No data available For this Reference.
+                            </td>
+                        </tr>
+                    @endif
                     </tbody>
                 </table>
             </div><!-- table-responsive -->
