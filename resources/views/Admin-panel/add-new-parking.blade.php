@@ -53,6 +53,8 @@
 
 
         <div class="section-wrapper mg-t-20">
+            <form class="" method="POST" enctype="multipart/form-data" action="{{url('admin-payment-info') }}">
+                {{csrf_field()}}
             <label class="section-title">Update Payment information</label>
 
 
@@ -61,25 +63,45 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="form-control-label">Receipt No: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="firstname" value="9011223311" placeholder="receipt No">
+                            <input class="form-control" type="text" name="receipt_no" value="9011223311" placeholder="receipt No">
+                            @if ($errors->has('receipt_no'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('receipt_no') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-md-6 mg-t--1 mg-md-t-0">
                         <div class="form-group mg-md-l--1">
                             <label class="form-control-label">Cheque No: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="lastname" value="1231" placeholder="cheque No">
+                            <input class="form-control" type="text" name="cheque_no" value="1231" placeholder="cheque No">
+                            @if ($errors->has('cheque_no'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('cheque_no') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-md-6 mg-t--1 mg-md-t-0">
                         <div class="form-group mg-md-l--1">
                             <label class="form-control-label">Bank Name: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="lastname" value="Noor Bank" placeholder="bank name">
+                            <input class="form-control" type="text" name="bank_name" value="Noor Bank" placeholder="bank name">
+                            @if ($errors->has('bank_name'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('bank_name') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-md-6 mg-t--1 mg-md-t-0">
                         <div class="form-group mg-md-l--1">
                             <label class="form-control-label">Assign to Email address: <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" name="email" value="johnpaul@yourdomain.com" placeholder="Enter email address">
+                            @if ($errors->has('email'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-md-12">
@@ -87,14 +109,23 @@
                             <label class="form-control-label">Payment Date: <span class="tx-danger">*</span></label>
                             <div class="input-group-text">
                                 <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
-                                <input type="text" class="form-control fc-datepicker" placeholder=" MM/DD/YYYY">
+                                <input type="text" name="date" class="form-control fc-datepicker" placeholder=" MM/DD/YYYY">
+                                @if ($errors->has('date'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('date') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group bd-t-0-force">
                             <label class="form-control-label">Amount: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="comments" value="AED 12400" placeholder="Enter Value">
+                            <input class="form-control" type="text" name="amount" value="AED 12400" placeholder="Enter Value">
+                            @if ($errors->has('amount'))
+                                <span class="help-block">
+                                    </span>
+                            @endif
                         </div>
                     </div><!-- col-4 -->
 
@@ -104,6 +135,7 @@
                     <button class="btn btn-secondary bd-0">Cancel</button>
                 </div><!-- form-group -->
             </div><!-- form-layout -->
+            </form>
         </div><!-- section-wrapper -->
 
         <div class="row row-sm">
@@ -119,7 +151,7 @@
 
                         <div class="col-lg-8">
                             <p class="mg-b-20 mg-sm-b-40">Select the days of the week for wash.</p>
-                            <div class="col-lg-4">
+                            <div class="col-lg-8">
 
                                 <label class="ckbox">
                                     <input type="checkbox"><span>Sunday</span>

@@ -53,6 +53,7 @@ Route::post('admin-eventsForm', 'AdmineventController@save_data');
 Route::post('blogForm', 'BlogController@save_data');
 Route::post('admin-conference', 'AdminConferenceController@save_data');
 Route::post('admin-conference-rooms', 'AdminConferenceController@save_rooms');
+Route::post('admin-payment-info', 'ParkingController@AdminPaymentInfo');
 
 
 Route::get('/admin', 'AdminNavigationController@toAdmin');

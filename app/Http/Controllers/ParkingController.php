@@ -33,4 +33,29 @@ class ParkingController extends Controller
 
         return back()->with('parking', 'Product has been added');
     }
+
+    public function AdminPaymentInfo(Request $request)
+    {
+
+        $request->validate([
+            'receipt_no' => 'required',
+            'cheque_no' => 'required',
+            'bank_name' => 'required',
+            'email' => 'required|email',
+            'date' => 'required',
+            'amount' => 'required',
+        ]);
+
+        $receipt_no = $request->input('receipt_no');
+        $cheque_no = $request->input('cheque_no');
+        $bank_name = $request->input('bank_name');
+        $email = $request->input('email');
+        $date = $request->input('date');
+        $amount = $request->input('amount');
+
+        DB::insert('insert into payment_info (receipt_no,cheque_no,bank_name,assigned_email,payment_date,amount) values(?,?,?,?,?,?)',[$receipt_no,$cheque_no,$bank_name,$email,$date,$amount]);
+
+        return back()->with('Admin-panel.add-new-parking', 'Product has been added');
+    }
 }
+
