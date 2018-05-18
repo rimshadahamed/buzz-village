@@ -54,6 +54,8 @@ Route::post('blogForm', 'BlogController@save_data');
 Route::post('admin-conference', 'AdminConferenceController@save_data');
 Route::post('admin-conference-rooms', 'AdminConferenceController@save_rooms');
 Route::post('admin-payment-info', 'ParkingController@AdminPaymentInfo');
+Route::post('admin-directory', 'AdminDirectoryController@add_directory');
+Route::post('admin-rewards', 'AdminRewardController@add_reward');
 
 
 Route::get('/admin', 'AdminNavigationController@toAdmin');
