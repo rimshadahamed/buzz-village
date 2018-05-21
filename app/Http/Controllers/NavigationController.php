@@ -36,8 +36,9 @@ class NavigationController extends Controller
 
     public function toConference()
     {
+        $admin_data = DB::table('admin_conference')->get();
         $data = DB::table('conference')->get();
-        return view('conference',['data' => $data]);
+        return view('conference',['data' => $data],['admin_data' => $admin_data]);
     }
 
     public function toMyConference($req_id)
@@ -52,7 +53,8 @@ class NavigationController extends Controller
     }
     public function toEvents()
     {
-        return view('events');
+        $data = DB::table('admin_events')->limit(3)->orderBy('id', 'desc')->get();
+        return view('events',['data' => $data]);
     }
     public function toBlog()
     {
@@ -71,10 +73,12 @@ class NavigationController extends Controller
     }
     public function toRewards()
     {
-        return view('m-rewards');
+        $data = DB::table('admin_rewards')->get();
+        return view('m-rewards',['data' => $data]);
     }
     public function toDirectory()
     {
-        return view('m-directory');
+        $data = DB::table('admin_directories')->get();
+        return view('m-directory',['data' => $data]);
     }
 }

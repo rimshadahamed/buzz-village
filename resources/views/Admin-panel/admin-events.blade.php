@@ -24,36 +24,20 @@
             <p class="mg-b-20 mg-sm-b-40">Next few events at Business Village.</p>
 
             <div class="row">
-                <div class="col-md">
-                    <div class="card bd-0">
-                        <img class="img-fluid" src="../img/img21.jpg" alt="Image">
-                        <div class="card-img-overlay pd-30 bg-black-4 d-flex flex-column justify-content-center">
-                            <p class="tx-white tx-medium mg-b-15">The Cat Prisoner</p>
-                            <p class="tx-white-7 tx-13">Some quick example text to build on the card title and make up the bulk of the card's content. Lorem ipsum dolor sit amet consictetur...</p>
-                            <p class="mg-b-0"><a href="" class="tx-white">Read more</a></p>
-                        </div><!-- card-img-overlay -->
-                    </div><!-- card -->
-                </div><!-- col -->
+
+                @foreach($data as $d)
                 <div class="col-md mg-t-20 mg-md-t-0">
                     <div class="card bd-0">
                         <img class="card-img img-fluid" src="../img/img22.jpg" alt="Image">
                         <div class="card-img-overlay pd-30 bg-black-4 d-flex flex-column justify-content-center">
-                            <p class="tx-white tx-medium mg-b-15">The Ghost Town</p>
-                            <p class="tx-white-7 tx-13">Some quick example text to build on the card title and make up the bulk of the card's content. Lorem ipsum dolor sit amet consictetur...</p>
+                            <p class="tx-white tx-medium mg-b-15">{{ $d->event_name }}</p>
+                            <p class="tx-white-7 tx-13">{{ $d->description }}</p>
                             <p class="mg-b-0"><a href="" class="tx-white">Read more</a></p>
                         </div><!-- card-img-overlay -->
                     </div><!-- card -->
                 </div><!-- col -->
-                <div class="col-md mg-t-20 mg-md-t-0">
-                    <div class="card bd-0">
-                        <img class="card-img img-fluid" src="../img/img23.jpg" alt="Image">
-                        <div class="card-img-overlay pd-30 bg-black-4 d-flex flex-column justify-content-center">
-                            <p class="tx-white tx-medium mg-b-15">The Green Leaves</p>
-                            <p class="tx-white-7 tx-13">Some quick example text to build on the card title and make up the bulk of the card's content. Lorem ipsum dolor sit amet consictetur...</p>
-                            <p class="mg-b-0"><a href="" class="tx-white">Read more</a></p>
-                        </div><!-- card-img-overlay -->
-                    </div><!-- card -->
-                </div><!-- col -->
+                @endforeach
+
             </div><!-- row -->
         </div><!-- section-wrapper -->
 

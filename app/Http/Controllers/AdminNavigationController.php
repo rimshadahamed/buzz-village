@@ -26,7 +26,8 @@ class AdminNavigationController extends Controller
     }
     public function toAdminEvents()
     {
-        return view('Admin-panel.admin-events');
+        $data = DB::table('admin_events')->limit(3)->orderBy('id', 'desc')->get();
+        return view('Admin-panel.admin-events',['data' => $data]);
     }
     public function toAddBlog()
     {
@@ -79,17 +80,20 @@ class AdminNavigationController extends Controller
     }
     public function toAdminRewards()
     {
-        return view('Admin-panel.admin-rewards');
+        $data = DB::table('admin_rewards')->get();
+        return view('Admin-panel.admin-rewards',['data' => $data]);
     }
     public function toAdminDirectories()
     {
-        return view('Admin-panel.admin-directories');
+        $data = DB::table('admin_directories')->get();
+        return view('Admin-panel.admin-directories',['data' => $data]);
     }
 
     public function toAdminConferenceInquiries()
     {
+        $admin_data = DB::table('admin_conference')->get();
         $data = DB::table('conference')->get();
-        return view('Admin-panel.admin-conference-inquiries',['data' => $data]);
+        return view('Admin-panel.admin-conference-inquiries',['data' => $data],['admin_data' => $admin_data]);
     }
     public function toAdminConferenceCalendar()
     {

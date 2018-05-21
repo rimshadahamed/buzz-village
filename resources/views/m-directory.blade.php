@@ -22,12 +22,15 @@
         <div class="manager-wrapper">
             <div class="manager-right">
                 <div class="row row-sm">
+
+                    @foreach($data as $d)
+
                     <div class="col-sm-6 col-lg-4">
                         <div class="card-contact">
                             <div class="tx-center">
-                                <a href=""><img src="../img/img11.jpg" class="card-img" alt=""></a>
-                                <h5 class="mg-t-10 mg-b-5"><a href="single-directory.html" class="contact-name">Isidore Dilao</a></h5>
-                                <p>Software Engineer</p>
+                                <a href=""><img src="../images/{{ $d->image }}" class="card-img" alt=""></a>
+                                <h5 class="mg-t-10 mg-b-5"><a href="single-directory.html" class="contact-name">{{ $d->company_name }}</a></h5>
+                                <p>{{ $d->description }}</p>
                                 <p class="contact-social">
                                     <a href=""><i class="fa fa-facebook"></i></a>
                                     <a href=""><i class="fa fa-twitter"></i></a>
@@ -37,237 +40,24 @@
 
                             <p class="contact-item">
                                 <span>Phone:</span>
-                                <span>+1 012 3456 789</span>
+                                <span>{{ $d->contact_number }}</span>
                             </p><!-- contact-item -->
                             <p class="contact-item">
                                 <span>Email:</span>
-                                <a href="">person1@domain.com</a>
+                                <a href="">{{ $d->email }}</a>
                             </p><!-- contact-item -->
                             <p class="contact-item">
                                 <span>URL:</span>
-                                <a href="">http://thmpxls.me</a>
+                                <a href="">{{ $d->website }}</a>
                             </p><!-- contact-item -->
                         </div><!-- card -->
                     </div><!-- col -->
-                    <div class="col-sm-6 col-lg-4 mg-t-20 mg-sm-t-0">
-                        <div class="card-contact">
-                            <div class="tx-center">
-                                <a href=""><img src="../img/img13.jpg" class="card-img" alt=""></a>
-                                <h5 class="mg-t-10 mg-b-5"><a href="single-directory.html" class="contact-name">Hamza Macasindil</a></h5>
-                                <p>System Administrator</p>
-                                <p class="contact-social">
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-google"></i></a>
-                                </p>
-                            </div><!-- tx-center -->
 
-                            <p class="contact-item">
-                                <span>Phone:</span>
-                                <span>+1 012 3456 789</span>
-                            </p><!-- contact-item -->
-                            <p class="contact-item">
-                                <span>Email:</span>
-                                <a href="">person1@domain.com</a>
-                            </p><!-- contact-item -->
-                            <p class="contact-item">
-                                <span>URL:</span>
-                                <a href="">http://thmpxls.me</a>
-                            </p><!-- contact-item -->
-                        </div><!-- card -->
-                    </div><!-- col -->
-                    <div class="col-sm-6 col-lg-4 mg-t-20 mg-lg-t-0">
-                        <div class="card-contact">
-                            <div class="tx-center">
-                                <a href=""><img src="../img/img12.jpg" class="card-img" alt=""></a>
-                                <h5 class="mg-t-10 mg-b-5"><a href="single-directory.html" class="contact-name">Maricel Villalon</a></h5>
-                                <p>Product Director</p>
-                                <p class="contact-social">
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-google"></i></a>
-                                </p>
-                            </div><!-- tx-center -->
+                    @endforeach
 
-                            <p class="contact-item">
-                                <span>Phone:</span>
-                                <span>+1 012 3456 789</span>
-                            </p><!-- contact-item -->
-                            <p class="contact-item">
-                                <span>Email:</span>
-                                <a href="">person1@domain.com</a>
-                            </p><!-- contact-item -->
-                            <p class="contact-item">
-                                <span>URL:</span>
-                                <a href="">http://thmpxls.me</a>
-                            </p><!-- contact-item -->
-                        </div><!-- card -->
-                    </div><!-- col -->
-                    <div class="col-sm-6 col-lg-4 mg-t-20">
-                        <div class="card-contact">
-                            <div class="tx-center">
-                                <a href=""><img src="../img/img14.jpg" class="card-img" alt=""></a>
-                                <h5 class="mg-t-10 mg-b-5"><a href="single-directory.html" class="contact-name">Dyanne Aceron</a></h5>
-                                <p>Software Engineer</p>
-                                <p class="contact-social">
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-google"></i></a>
-                                </p>
-                            </div><!-- tx-center -->
-
-                            <p class="contact-item">
-                                <span>Phone:</span>
-                                <span>+1 012 3456 789</span>
-                            </p><!-- contact-item -->
-                            <p class="contact-item">
-                                <span>Email:</span>
-                                <a href="">person1@domain.com</a>
-                            </p><!-- contact-item -->
-                            <p class="contact-item">
-                                <span>URL:</span>
-                                <a href="">http://thmpxls.me</a>
-                            </p><!-- contact-item -->
-                        </div><!-- card -->
-                    </div><!-- col -->
-                    <div class="col-sm-6 col-lg-4 mg-t-20">
-                        <div class="card-contact">
-                            <div class="tx-center">
-                                <a href=""><img src="../img/img15.jpg" class="card-img" alt=""></a>
-                                <h5 class="mg-t-10 mg-b-5"><a href="single-directory.html" class="contact-name">Annelyn Mercado</a></h5>
-                                <p>Software Engineer</p>
-                                <p class="contact-social">
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-google"></i></a>
-                                </p>
-                            </div><!-- tx-center -->
-
-                            <p class="contact-item">
-                                <span>Phone:</span>
-                                <span>+1 012 3456 789</span>
-                            </p><!-- contact-item -->
-                            <p class="contact-item">
-                                <span>Email:</span>
-                                <a href="">person1@domain.com</a>
-                            </p><!-- contact-item -->
-                            <p class="contact-item">
-                                <span>URL:</span>
-                                <a href="">http://thmpxls.me</a>
-                            </p><!-- contact-item -->
-                        </div><!-- card -->
-                    </div><!-- col -->
-                    <div class="col-sm-6 col-lg-4 mg-t-20">
-                        <div class="card-contact">
-                            <div class="tx-center">
-                                <a href=""><img src="../img/img2.jpg" class="card-img" alt=""></a>
-                                <h5 class="mg-t-10 mg-b-5"><a href="single-directory.html" class="contact-name">Billie Ko</a></h5>
-                                <p>Software Engineer</p>
-                                <p class="contact-social">
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-google"></i></a>
-                                </p>
-                            </div><!-- tx-center -->
-
-                            <p class="contact-item">
-                                <span>Phone:</span>
-                                <span>+1 012 3456 789</span>
-                            </p><!-- contact-item -->
-                            <p class="contact-item">
-                                <span>Email:</span>
-                                <a href="">person1@domain.com</a>
-                            </p><!-- contact-item -->
-                            <p class="contact-item">
-                                <span>URL:</span>
-                                <a href="">http://thmpxls.me</a>
-                            </p><!-- contact-item -->
-                        </div><!-- card -->
-                    </div><!-- col -->
-                    <div class="col-sm-6 col-lg-4 mg-t-20">
-                        <div class="card-contact">
-                            <div class="tx-center">
-                                <a href=""><img src="../img/img5.jpg" class="card-img" alt=""></a>
-                                <h5 class="mg-t-10 mg-b-5"><a href="single-directory.html" class="contact-name">Rose Orcullo</a></h5>
-                                <p>Software Engineer</p>
-                                <p class="contact-social">
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-google"></i></a>
-                                </p>
-                            </div><!-- tx-center -->
-
-                            <p class="contact-item">
-                                <span>Phone:</span>
-                                <span>+1 012 3456 789</span>
-                            </p><!-- contact-item -->
-                            <p class="contact-item">
-                                <span>Email:</span>
-                                <a href="">person1@domain.com</a>
-                            </p><!-- contact-item -->
-                            <p class="contact-item">
-                                <span>URL:</span>
-                                <a href="">http://thmpxls.me</a>
-                            </p><!-- contact-item -->
-                        </div><!-- card -->
-                    </div><!-- col -->
-                    <div class="col-sm-6 col-lg-4 mg-t-20">
-                        <div class="card-contact">
-                            <div class="tx-center">
-                                <a href=""><img src="../img/img6.jpg" class="card-img" alt=""></a>
-                                <h5 class="mg-t-10 mg-b-5"><a href="single-directory.html" class="contact-name">Archie Cantones</a></h5>
-                                <p>Software Engineer</p>
-                                <p class="contact-social">
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-google"></i></a>
-                                </p>
-                            </div><!-- tx-center -->
-
-                            <p class="contact-item">
-                                <span>Phone:</span>
-                                <span>+1 012 3456 789</span>
-                            </p><!-- contact-item -->
-                            <p class="contact-item">
-                                <span>Email:</span>
-                                <a href="">person1@domain.com</a>
-                            </p><!-- contact-item -->
-                            <p class="contact-item">
-                                <span>URL:</span>
-                                <a href="">http://thmpxls.me</a>
-                            </p><!-- contact-item -->
-                        </div><!-- card -->
-                    </div><!-- col -->
-                    <div class="col-sm-6 col-lg-4 mg-t-20">
-                        <div class="card-contact">
-                            <div class="tx-center">
-                                <a href=""><img src="../img/img8.jpg" class="card-img" alt=""></a>
-                                <h5 class="mg-t-10 mg-b-5"><a href="single-directory.html" class="contact-name">Charize Cericoz</a></h5>
-                                <p>Software Engineer</p>
-                                <p class="contact-social">
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-google"></i></a>
-                                </p>
-                            </div><!-- tx-center -->
-
-                            <p class="contact-item">
-                                <span>Phone:</span>
-                                <span>+1 012 3456 789</span>
-                            </p><!-- contact-item -->
-                            <p class="contact-item">
-                                <span>Email:</span>
-                                <a href="">person1@domain.com</a>
-                            </p><!-- contact-item -->
-                            <p class="contact-item">
-                                <span>URL:</span>
-                                <a href="">http://thmpxls.me</a>
-                            </p><!-- contact-item -->
-                        </div><!-- card -->
-                    </div><!-- col -->
                 </div><!-- row -->
-
-                <a href="" class="btn btn-light btn-block mg-t-20">Load more contacts</a>
+{{--
+                <a href="" class="btn btn-light btn-block mg-t-20">Load more contacts</a>--}}
 
             </div><!-- manager-right -->
             <div class="manager-left">

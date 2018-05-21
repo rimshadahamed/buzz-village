@@ -192,103 +192,27 @@
             <p class="mg-b-20 mg-sm-b-40">View all conference Rooms in full angles.</p>
             <div class="row">
 
-                <div class="col-lg-4">
-                    <div class="card bd-0">
-                        <img class="img-fluid" src="../img/img18.jpg" alt="Image">
-                        <figcaption class="overlay-body d-flex align-items-end justify-content-center">
-                            <div class="img-option">
-                                <a href="my-" class="img-option-link"><div><i class="icon ion-ios-eye"></i><span>360</span></div></a>
-                            </div>
-                        </figcaption>
-                    </div>
-                    <div class="card-body bd bd-t-0">
-                        <p class="card-text">Conference Room - 1A.</p>
-                        <p class="card-text">Included: Projector / Notepads / Water</p>
-                        <button class="btn btn-indigo active btn-block mg-b-10">10 Guest</button>
-                        <button class="btn btn-success active btn-block mg-b-10">View Location</button>
-                    </div>
-                </div><!-- card -->
+                @foreach($admin_data as $d)
 
-                <div class="col-lg-4">
-                    <div class="card bd-0">
-                        <img class="img-fluid" src="../img/img18.jpg" alt="Image">
-                        <figcaption class="overlay-body d-flex align-items-end justify-content-center">
-                            <div class="img-option">
-                                <a href="#" class="img-option-link"><div><i class="icon ion-ios-eye"></i><span>360</span></div></a>
-                            </div>
-                        </figcaption>
-                    </div>
-                    <div class="card-body bd bd-t-0">
-                        <p class="card-text">Conference Room - 1A</p>
-                        <p class="card-text">Included: Projector / Notepads / Water</p>
-                        <button class="btn btn-indigo active btn-block mg-b-10">25 Guest</button>
-                        <button class="btn btn-success active btn-block mg-b-10">View Location</button>
-                    </div>
-                </div><!-- card -->
-                <div class="col-lg-4">
-                    <div class="card bd-0">
-                        <img class="img-fluid" src="../img/img18.jpg" alt="Image">
-                        <figcaption class="overlay-body d-flex align-items-end justify-content-center">
-                            <div class="img-option">
-                                <a href="#" class="img-option-link"><div><i class="icon ion-ios-eye"></i><span>360</span></div></a>
-                            </div>
-                        </figcaption>
-                    </div>
-                    <div class="card-body bd bd-t-0">
-                        <p class="card-text">Conference Room - 2A</p>
-                        <p class="card-text">Included: Projector / Notepads / Water</p>
-                        <button class="btn btn-indigo active btn-block mg-b-10">50 Guest</button>
-                        <button class="btn btn-success active btn-block mg-b-10">View Location</button>
-                    </div>
-                </div><!-- card -->
-                <div class="col-lg-4 pd-t-30">
-                    <div class="card bd-0">
-                        <img class="img-fluid" src="../img/img18.jpg" alt="Image">
-                        <figcaption class="overlay-body d-flex align-items-end justify-content-center">
-                            <div class="img-option">
-                                <a href="#" class="img-option-link"><div><i class="icon ion-ios-eye"></i><span>360</span></div></a>
-                            </div>
-                        </figcaption>
-                    </div>
-                    <div class="card-body bd bd-t-0">
-                        <p class="card-text">Conference Room - 4C</p>
-                        <p class="card-text">Included: Projector / Notepads / Water</p>
-                        <button class="btn btn-indigo active btn-block mg-b-10">100 Guest</button>
-                        <button class="btn btn-success active btn-block mg-b-10">View Location</button>
-                    </div>
-                </div><!-- card -->
-                <div class="col-lg-4 pd-t-30">
-                    <div class="card bd-0">
-                        <img class="img-fluid" src="../img/img18.jpg" alt="Image">
-                        <figcaption class="overlay-body d-flex align-items-end justify-content-center">
-                            <div class="img-option">
-                                <a href="#" class="img-option-link"><div><i class="icon ion-ios-eye"></i><span>360</span></div></a>
-                            </div>
-                        </figcaption>
-                    </div>
-                    <div class="card-body bd bd-t-0">
-                        <p class="card-text">Conference Room - 10B</p>
-                        <p class="card-text">Included: Projector / Notepads / Water</p>
-                        <button class="btn btn-indigo active btn-block mg-b-10">5 Guest</button>
-                        <button class="btn btn-success active btn-block mg-b-10">View Location</button>
-                    </div>
-                </div><!-- card -->
-                <div class="col-lg-4 pd-t-30">
-                    <div class="card bd-0">
-                        <img class="img-fluid" src="../img/img18.jpg" alt="Image">
-                        <figcaption class="overlay-body d-flex align-items-end justify-content-center">
-                            <div class="img-option">
-                                <a href="#" class="img-option-link"><div><i class="icon ion-ios-eye"></i><span>360</span></div></a>
-                            </div>
-                        </figcaption>
-                    </div>
-                    <div class="card-body bd bd-t-0">
-                        <p class="card-text">Conference Room - 3C</p>
-                        <p class="card-text">Included: Projector / Notepads / Water</p>
-                        <button class="btn btn-indigo active btn-block mg-b-10">25 Guest</button>
-                        <button class="btn btn-success active btn-block mg-b-10">View Location</button>
+                    <div class="col-lg-4">
+                        <div class="card bd-0">
+                            <img class="img-fluid" src="../images/{{ $d->image_360 }}" alt="Image">
+                            <figcaption class="overlay-body d-flex align-items-end justify-content-center">
+                                <div class="img-option">
+                                    <a href="my-" class="img-option-link"><div><i class="icon ion-ios-eye"></i><span>360</span></div></a>
+                                </div>
+                            </figcaption>
+                        </div>
+                        <div class="card-body bd bd-t-0">
+                            <p class="card-text">Conference Room - {{ $d->room_no }}.</p>
+                            <p class="card-text">Included: {{ $d->includes }}</p>
+                            <button class="btn btn-indigo active btn-block mg-b-10">{{ $d->room_size }} Guest</button>
+                            <button class="btn btn-success active btn-block mg-b-10">View Location</button>
+                        </div>
                     </div><!-- card -->
-                </div><!-- row -->
+
+                @endforeach
+
             </div><!-- section-wrapper -->
 
 
