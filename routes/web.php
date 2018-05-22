@@ -72,6 +72,7 @@ Route::get('/admin-events', 'AdminNavigationController@toAdminEvents')->name('ad
 Route::get('/admin-facility', 'AdminNavigationController@toAdminFacility')->name('admin-facility');
 Route::get('/admin-office', 'AdminNavigationController@toAdminOffice')->name('admin-office');
 Route::get('/admin-my-office', 'AdminNavigationController@toAdminMyOffice')->name('admin-my-office');
+Route::get('/admin-facility-ticket{case_ID}', 'AdminNavigationController@toAdminFacilityTicket')->name('admin-facility-ticket');
 
 
 Route::get('/admin-social', 'AdminNavigationController@toAdminSocial')->name('admin-social');

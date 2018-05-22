@@ -1,4 +1,4 @@
-<title>Facilities | Business Village - Connect</title>
+<title>Office | Business Village - Connect</title>
 @include('partials.header')
 
 <body class="dashboard-4">

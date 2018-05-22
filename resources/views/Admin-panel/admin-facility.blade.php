@@ -39,7 +39,7 @@
                         <td>{{ $d->issue_type }}</td>
                         <td>{{ $d->issue_description }}</td>
                         <td>{{ $d->status }}</td>
-                        <td><a href="facility-ticket.html"><i class="fa fa-eye"></i></a></td>
+                        <td><a href="{{route('admin-facility-ticket',$d->case_ID )}}"><i class="fa fa-eye"></i></a></td>
                     </tr>
                     @endforeach
                        @else

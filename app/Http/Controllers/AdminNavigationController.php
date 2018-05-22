@@ -19,7 +19,6 @@ class AdminNavigationController extends Controller
         return view('Admin-panel.adminlogin');
     }
 
-
     public function toAdminDashbord()
     {
         return view('Admin-panel.admin-dashboard');
@@ -54,7 +53,6 @@ class AdminNavigationController extends Controller
         return view('Admin-panel.admin-blog',['data' => $data]);
     }
 
-
     public function toAdminFacility()
     {
         $data = DB::table('facility')->get();
@@ -71,8 +69,6 @@ class AdminNavigationController extends Controller
     {
         return view('Admin-panel.admin-my-office');
     }
-
-
 
     public function toAdminSocial()
     {
@@ -99,11 +95,11 @@ class AdminNavigationController extends Controller
     {
         return view('Admin-panel.admin-conference-calendar');
     }
+
     public function toAdminConferenceRooms()
     {
         return view('Admin-panel.admin-conference-rooms');
     }
-
 
     public function toAdminParkingInquiries()
     {
@@ -113,5 +109,11 @@ class AdminNavigationController extends Controller
     public function toAdminParkingSpaces()
     {
         return view('Admin-panel.admin-parking-spaces');
+    }
+
+    public function toAdminFacilityTicket($case_ID)
+    {
+        $data =DB::table('facility')->where('case_ID',$case_ID)->first();
+        return view('Admin-panel.facility-ticket',['facility' => $data]);
     }
 }
