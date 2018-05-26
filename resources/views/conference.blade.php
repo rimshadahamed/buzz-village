@@ -48,7 +48,7 @@
                         <td>{{ $d->booked_room }}</td>
                         <td><a href="{{route('myconference',$d->req_id )}}"><i class="fa fa-eye"></i></a></td>
                     </tr>
-                    @endif
+                         @endif
                     @endforeach
                     @else
                         <tr>

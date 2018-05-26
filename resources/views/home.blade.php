@@ -45,36 +45,18 @@
             <p class="mg-b-20 mg-sm-b-40">Next few events at Business Village.</p>
 
             <div class="row">
+                @foreach($data as $d)
                 <div class="col-md">
                     <div class="card bd-0">
                         <img class="img-fluid" src="../img/img21.jpg" alt="Image">
                         <div class="card-img-overlay pd-30 bg-black-4 d-flex flex-column justify-content-center">
-                            <h3 class="tx-white tx-medium mg-b-15">Dubai Toastmasters</h3>
-                            <h6 class="tx-white-7 tx-13">22nd April 2018 - 3 - 5 pm </h6>
+                            <h3 class="tx-white tx-medium mg-b-15">{{ $d->event_name }}s</h3>
+                            <h6 class="tx-white-7 tx-13">{{ $d->description }} </h6>
                             <p class="mg-b-0"><a href="single-event.html" class="tx-white">Register</a></p>
                         </div><!-- card-img-overlay -->
                     </div><!-- card -->
                 </div><!-- col -->
-                <div class="col-md mg-t-20 mg-md-t-0">
-                    <div class="card bd-0">
-                        <img class="card-img img-fluid" src="../img/img22.jpg" alt="Image">
-                        <div class="card-img-overlay pd-30 bg-black-4 d-flex flex-column justify-content-center">
-                            <h3 class="tx-white tx-medium mg-b-15">Dubai Toastmasters</h3>
-                            <h6 class="tx-white-7 tx-13">22nd April 2018 - 3 - 5 pm </h6>
-                            <p class="mg-b-0"><a href="single-event.html" class="tx-white">Register</a></p>
-                        </div><!-- card-img-overlay -->
-                    </div><!-- card -->
-                </div><!-- col -->
-                <div class="col-md mg-t-20 mg-md-t-0">
-                    <div class="card bd-0">
-                        <img class="card-img img-fluid" src="../img/img23.jpg" alt="Image">
-                        <div class="card-img-overlay pd-30 bg-black-4 d-flex flex-column justify-content-center">
-                            <h3 class="tx-white tx-medium mg-b-15">Dubai Toastmasters</h3>
-                            <h6 class="tx-white-7 tx-13">22nd April 2018 - 3 - 5 pm </h6>
-                            <p class="mg-b-0"><a href="single-event.html" class="tx-white">Register</a></p>
-                        </div><!-- card-img-overlay -->
-                    </div><!-- card -->
-                </div><!-- col -->
+                @endforeach
             </div><!-- row -->
         </div><!-- section-wrapper -->
 
