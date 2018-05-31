@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\ofiice;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Image;
 
 class OfficeController extends Controller
@@ -46,7 +46,23 @@ class OfficeController extends Controller
         $image_file->move($destinationPath, $imagename);
 
 
-        DB::insert('insert into office (first_name,last_name,email_address,space_required,purpose,comments,trade_license_validity,tenecy_end_date,image,status,block,user) values(?,?,?,?,?,?,?,?,?,?,?,?)',[$fname,$lname,$email,$space_required,$purpose,$comments,'valid','12/12/12',$imagename,'status','block',$user]);
+/*        DB::insert('insert into requested_office (first_name,last_name,email_address,space_required,purpose,comments,trade_license,status,block,user) values(?,?,?,?,?,?,?,?,?,?)',[$fname,$lname,$email,$space_required,$purpose,$comments,$imagename,'Renewed','block',$user]);*/
+        $requested_office_id = DB::table('requested_office')->insertGetId
+        (
+            [
+                'first_name' => $fname,
+                'last_name' =>$lname,
+                'email_address' => $email,
+                'space_required' =>$space_required,
+                'purpose' => $purpose,
+                'comments' => $comments,
+                'trade_license' => $imagename,
+                'status' => 'Renewed',
+                'block' => 'b',
+                'user' => $user,
+            ]
+        );
+        DB::insert('insert into booked_office (requested_office_id,office_no,office_size,space,assigned_to,tenancy_contract,floor_plan,tenancy_end_date,licence_end_date,comments_admin,user) values(?,?,?,?,?,?,?,?,?,?,?)',[$requested_office_id,'not define','not define','not define','not define','not define','not define','not define','not define','not define',$user]);
 
         return back()->with('office', 'Product has been added');
     }

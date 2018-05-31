@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdminDirectories extends Migration
+class CreateDirectoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateAdminDirectories extends Migration
      */
     public function up()
     {
-        Schema::create('admin_directories', function (Blueprint $table) {
+        Schema::create('directory', function (Blueprint $table) {
             $table->increments('id');
             $table->string('company_name');
             $table->string('industry');
-            $table->text('description');
+            $table->string('description');
             $table->string('image');
             $table->string('website');
             $table->string('email');
@@ -36,6 +36,6 @@ class CreateAdminDirectories extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin_directories');
+        Schema::dropIfExists('directory');
     }
 }

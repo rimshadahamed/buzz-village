@@ -42,7 +42,7 @@ class AdminDirectoryController extends Controller
         $destinationPath = public_path('/images');
         $image_file->move($destinationPath, $imagename);
 
-        DB::insert('insert into admin_directories (company_name,industry,description,image,website,email,hr_email,contact_number,linkedin,office_no) values(?,?,?,?,?,?,?,?,?,?)', [$company_name,$industry,$description,$imagename,$website,$email,$hr_email,$contact_no,$linkedin,$office_no]);
+        DB::insert('insert into directory (company_name,industry,description,image,website,email,hr_email,contact_number,linkedin,office_no) values(?,?,?,?,?,?,?,?,?,?)', [$company_name,$industry,$description,$imagename,$website,$email,$hr_email,$contact_no,$linkedin,$office_no]);
 
         return back()->with('Admin-panel.add-directories', 'Product has been added');
     }

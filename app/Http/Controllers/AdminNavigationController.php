@@ -25,7 +25,7 @@ class AdminNavigationController extends Controller
     }
     public function toAdminEvents()
     {
-        $data = DB::table('admin_events')->limit(3)->orderBy('id', 'desc')->get();
+        $data = DB::table('events')->limit(3)->orderBy('id', 'desc')->get();
         return view('Admin-panel.admin-events',['data' => $data]);
     }
     public function toAddBlog()
@@ -61,13 +61,15 @@ class AdminNavigationController extends Controller
 
     public function toAdminOffice()
     {
-        $data = DB::table('office')->get();
+        $officeMaster = new \App\OfficeMaster();
+        $data = $officeMaster->getBookedOffice();
         return view('Admin-panel.admin-office',['data' => $data]);
     }
 
-    public function toAdminMyOffice()
+    public function toAdminMyOffice($office_no)
     {
-        return view('Admin-panel.admin-my-office');
+        $data =DB::table('requested_office')->where('id',$office_no)->first();
+        return view('Admin-panel.admin-my-office',['office' => $data]);
     }
 
     public function toAdminSocial()
@@ -76,12 +78,12 @@ class AdminNavigationController extends Controller
     }
     public function toAdminRewards()
     {
-        $data = DB::table('admin_rewards')->get();
+        $data = DB::table('rewards')->get();
         return view('Admin-panel.admin-rewards',['data' => $data]);
     }
     public function toAdminDirectories()
     {
-        $data = DB::table('admin_directories')->get();
+        $data = DB::table('directory')->get();
         return view('Admin-panel.admin-directories',['data' => $data]);
     }
 

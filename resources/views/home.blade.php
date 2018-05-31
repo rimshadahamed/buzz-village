@@ -45,6 +45,7 @@
             <p class="mg-b-20 mg-sm-b-40">Next few events at Business Village.</p>
 
             <div class="row">
+                @if ($data->isNotEmpty())
                 @foreach($data as $d)
                 <div class="col-md">
                     <div class="card bd-0">
@@ -57,6 +58,11 @@
                     </div><!-- card -->
                 </div><!-- col -->
                 @endforeach
+                @else
+                    <div class="card bd-0">
+                            No Events available For this Reference.
+                    </div><!-- card -->
+                @endif
             </div><!-- row -->
         </div><!-- section-wrapper -->
 

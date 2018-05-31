@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdminRewardsTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateAdminRewardsTable extends Migration
      */
     public function up()
     {
-        Schema::create('admin_rewards', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-
-            $table->string('company_name');
-            $table->integer('collection_count');
-            $table->text('description');
-            $table->string('image');
-            $table->text('terms');
+            $table->integer('userType');
+            $table->string('name');
+            $table->string('mobile');
+            $table->string('email');
+            $table->string('password');
+            $table->string('remember_token');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateAdminRewardsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin_rewards');
+        Schema::drop('users');
     }
 }

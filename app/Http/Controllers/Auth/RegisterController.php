@@ -64,11 +64,11 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
+            'userType' => 1,
             'name' => $data['name'],
             'mobile' => $data['mobile'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'isAdmin' => 0,
         ]);
     }
 }

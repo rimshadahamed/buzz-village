@@ -12,7 +12,7 @@
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Profile</li>
             </ol>
-            <h6 class="slim-pagetitle">Office 901 Block B</h6>
+            <h6 class="slim-pagetitle">Office {{ $data[0]->office_no}} Block {{ $data[0]->block}}</h6>
         </div><!-- slim-pageheader -->
 
         <div class="row row-sm">
@@ -23,21 +23,21 @@
                             <i class="icon ion-ios-analytics-outline"></i>
                             <div class="dash-content">
                                 <label class="tx-primary">Tenency Validity</label>
-                                <h2>{{ $data->tenecy_end_date }}</h2>
+                                <h2>{{ $data[0]->tenancy_end_date }}</h2>
                             </div><!-- dash-content -->
                         </div><!-- col-3 -->
                         <div class="col-lg-4">
                             <i class="icon ion-ios-pie-outline"></i>
                             <div class="dash-content">
                                 <label class="tx-success">Trade License</label>
-                                <h2>{{ $data->trade_license_validity }}</h2>
+                                <h2>{{ $data[0]->trade_license}}</h2>
                             </div><!-- dash-content -->
                         </div><!-- col-3 -->
                         <div class="col-lg-4">
                             <i class="icon ion-ios-stopwatch-outline"></i>
                             <div class="dash-content">
                                 <label class="tx-purple">Office Size</label>
-                                <h2>{{ $data->space_required }}</h2>
+                                <h2>{{ $data[0]->space }}</h2>
                             </div><!-- dash-content -->
                         </div><!-- col-3 -->
                     </div><!-- row -->

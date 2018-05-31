@@ -35,7 +35,7 @@ class AdmineventController extends Controller
         $date = $request->input('date');
 
 
-        DB::insert('insert into admin_events (event_name,description,email_address,website,social,contact_number,purpose,event_date) values(?,?,?,?,?,?,?,?)',[$event_name,$description,$email,$website,$social,$contct_no,$purpose,$date]);
+        DB::insert('insert into events (event_name,description,email_address,website,social,contact_number,purpose,event_date) values(?,?,?,?,?,?,?,?)',[$event_name,$description,$email,$website,$social,$contct_no,$purpose,$date]);
 
         return back()->with('Admin-panel.admin-events', 'Product has been added');
     }

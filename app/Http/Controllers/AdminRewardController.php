@@ -32,7 +32,7 @@ class AdminRewardController extends Controller
         $destinationPath = public_path('/images');
         $image_file->move($destinationPath, $imagename);
 
-        DB::insert('insert into admin_rewards (company_name,collection_count,description,image,terms) values(?,?,?,?,?)', [$company_name,$collection_count,$description,$imagename,$terms]);
+        DB::insert('insert into rewards (company_name,collection_count,description,image,terms) values(?,?,?,?,?)', [$company_name,$collection_count,$description,$imagename,$terms]);
 
         return back()->with('Admin-panel.add-rewards', 'Product has been added');
     }

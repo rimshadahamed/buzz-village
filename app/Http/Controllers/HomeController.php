@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data = DB::table('admin_events')->limit(3)->orderBy('id', 'desc')->get();
+        $data = DB::table('events')->limit(3)->orderBy('id', 'desc')->get();
         return view('home',['data' => $data]);
     }
 

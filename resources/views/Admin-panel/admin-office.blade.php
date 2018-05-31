@@ -36,10 +36,10 @@
                         @foreach($data as $d)
                     <tr>
                         <th scope="row">{{ $d->office_no }}</th>
-                        <td>{{ $d->trade_license_validity }}</td>
+                        <td>{{ $d->first_name}} {{ $d->last_name}}</td>
                         <td>{{ $d->space_required }}</td>
                         <td>{{ $d->status }}</td>
-                        <td><a href="my-office.html"><i class="fa fa-eye"></i></a></td>
+                        <td><a href="{{route('admin-my-office',$d->id )}}"><i class="fa fa-eye"></i></a></td>
                     </tr>
                         @endforeach
                     @else

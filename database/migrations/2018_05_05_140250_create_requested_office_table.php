@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateParkingTable extends Migration
+class CreateRequestedOfficeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,18 @@ class CreateParkingTable extends Migration
      */
     public function up()
     {
-        Schema::create('parking', function (Blueprint $table) {
-            $table->increments('parking_id');
+        Schema::create('requested_office', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email_address');
-            $table->string('plan');
-            $table->string('comments')->nullable();
-            $table->string('block');
-            $table->string('floor');
-            $table->string('parking_valid_till');
+            $table->string('space_required');
+            $table->string('purpose');
+            $table->string('comments');
+            $table->string('trade_license');
             $table->string('status');
-            $table->string('car_wash');
+            $table->string('block');
             $table->string('user');
-
             $table->timestamps();
         });
     }
@@ -38,6 +36,6 @@ class CreateParkingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('parking');
+        Schema::dropIfExists('requested_office');
     }
 }

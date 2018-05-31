@@ -39,12 +39,12 @@
                     @foreach($data as $d)
                         @if( Auth::User()->email == $d->user)
                         <tr>
-                            <th scope="row">{{ $d->office_no }}</th>
+                            <th scope="row">{{ $d->id }}</th>
                             <td>Block</td>
-                            <td>{{ $d->trade_license_validity }}</td>
-                            <td>{{ $d->tenecy_end_date }}</td>
+                            <td>{{ $d->trade_license }}</td>
+                            <td></td>
                             <td>{{ $d->status }}</td>
-                            <td><a href="{{route('myoffice',$d->office_no )}}"><i class="fa fa-eye"></i></a></td>
+                            <td><a href="{{route('myoffice',$d->id )}}"><i class="fa fa-eye"></i></a></td>
                         </tr>
                         @endif
                     @endforeach

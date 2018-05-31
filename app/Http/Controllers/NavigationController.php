@@ -30,7 +30,9 @@ class NavigationController extends Controller
 
     public function toOffice()
     {
-        $data = DB::table('office')->get();
+        //$data = DB::table('requested_office')->get();
+        $officeMaster = new \App\OfficeMaster();
+        $data = $officeMaster->getBookedOffice();
         return view('office',['data' => $data]);
     }
 
@@ -48,7 +50,9 @@ class NavigationController extends Controller
     }
     public function toMyOffice($office_no)
     {
-        $data =DB::table('office')->where('office_no',$office_no)->first();
+       /* $data =DB::table('requested_office')->where('id',$office_no)->first();*/
+        $officeMaster = new \App\OfficeMaster();
+        $data = $officeMaster->getMyBookedOffice($office_no);
         return view('myoffice',['data' => $data]);
     }
     public function toEvents()
@@ -73,12 +77,12 @@ class NavigationController extends Controller
     }
     public function toRewards()
     {
-        $data = DB::table('admin_rewards')->get();
+        $data = DB::table('rewards')->get();
         return view('m-rewards',['data' => $data]);
     }
     public function toDirectory()
     {
-        $data = DB::table('admin_directories')->get();
+        $data = DB::table('directory')->get();
         return view('m-directory',['data' => $data]);
     }
 }
